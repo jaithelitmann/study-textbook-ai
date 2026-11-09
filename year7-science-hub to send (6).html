@@ -1,0 +1,1174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Year 7 Science — Yearly Test Revision</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Newsreader:opsz,wght@6..72,500;6..72,700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg: #f4f2ec;
+  --surface: #ffffff;
+  --ink: #1c2529;
+  --ink-2: #4a565c;
+  --ink-3: #7d878c;
+  --line: #dedad0;
+  --green: #2c6e49;
+  --green-soft: #e3efe7;
+  --amber: #e8b53a;
+  --amber-soft: #fbf1d6;
+  --red: #b8462f;
+  --red-soft: #f7e3dd;
+  --blue: #2f5d86;
+  --blue-soft: #e2ebf3;
+  --radius: 10px;
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --sans: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.55; }
+button, input, textarea, select { font: inherit; color: inherit; }
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 700; line-height: 1.2; margin: 0 0 .5em; letter-spacing: -.01em; }
+h1 { font-size: 2.1rem; } h2 { font-size: 1.5rem; } h3 { font-size: 1.15rem; margin-top: 1.2em; }
+p { margin: 0 0 .8em; }
+mark { background: var(--amber-soft); box-shadow: inset 0 -.45em 0 var(--amber); padding: 0 2px; color: inherit; }
+a { color: var(--blue); }
+
+.shell { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+.side { position: sticky; top: 0; height: 100vh; overflow-y: auto; background: var(--ink); color: #e9ecea; padding: 20px 14px; display: flex; flex-direction: column; gap: 18px; }
+.brand { display: flex; gap: 10px; align-items: center; padding: 0 6px; }
+.brand-mark { width: 38px; height: 38px; border-radius: 8px; background: var(--amber); color: var(--ink); display: grid; place-items: center; font: 700 1.4rem var(--serif); }
+.brand b { display: block; font-family: var(--serif); font-size: 1.05rem; }
+.brand small { color: #a9b3b0; font-size: .8rem; }
+#nav { display: flex; flex-direction: column; gap: 2px; }
+#nav button { all: unset; cursor: pointer; padding: 9px 12px; border-radius: 8px; display: flex; gap: 10px; align-items: center; color: #cdd5d2; font-size: .95rem; }
+#nav button:hover { background: #2b383d; color: #fff; }
+#nav button[aria-current="true"] { background: #f4f2ec; color: var(--ink); font-weight: 700; }
+#nav .ico { width: 20px; text-align: center; opacity: .85; }
+.side-foot { margin-top: auto; font-size: .85rem; color: #a9b3b0; padding: 0 6px; }
+.side-foot b { color: var(--amber); font-size: 1.6rem; font-family: var(--serif); display: block; }
+
+main { padding: 32px clamp(16px, 4vw, 48px) 80px; max-width: 1100px; width: 100%; outline: none; }
+.eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: .75rem; color: var(--ink-3); font-weight: 700; margin-bottom: 4px; }
+.lede { color: var(--ink-2); max-width: 62ch; }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
+.grid { display: grid; gap: 16px; }
+.g2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.g3 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.spread { justify-content: space-between; }
+.muted { color: var(--ink-3); font-size: .9rem; }
+.stack > * + * { margin-top: 16px; }
+
+.btn { border: 1px solid var(--ink); background: var(--ink); color: #fff; border-radius: 8px; padding: 9px 16px; cursor: pointer; font-weight: 700; font-size: .95rem; }
+.btn:hover { background: #33424a; }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn.ghost:hover { border-color: var(--ink); }
+.btn.green { background: var(--green); border-color: var(--green); }
+.btn.sm { padding: 5px 11px; font-size: .85rem; }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.chip { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 5px 12px; cursor: pointer; font-size: .85rem; }
+.chip[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+.tag { display: inline-block; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; padding: 2px 8px; border-radius: 4px; background: var(--blue-soft); color: var(--blue); }
+.tag.C { background: var(--green-soft); color: var(--green); } .tag.O { background: #e8f0e0; color: #4f6b2a; }
+.tag.K { background: #efe6f0; color: #6d4a72; } .tag.P { background: var(--blue-soft); color: var(--blue); }
+.tag.H { background: var(--red-soft); color: var(--red); } .tag.W { background: var(--amber-soft); color: #8a6512; }
+
+/* dashboard */
+.hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; margin-bottom: 16px; }
+.hero .big { background: var(--green); color: #fff; border: 0; }
+.hero .big h1 { color: #fff; }
+.hero .big p { color: #d6e7dc; }
+.stat { font: 700 2.4rem var(--serif); line-height: 1; }
+.bar { height: 8px; background: #ece8de; border-radius: 99px; overflow: hidden; }
+.bar > i { display: block; height: 100%; background: var(--green); border-radius: 99px; }
+.bar.low > i { background: var(--red); } .bar.mid > i { background: var(--amber); }
+.topic-row { display: grid; grid-template-columns: 1fr 120px 48px; gap: 12px; align-items: center; padding: 8px 0; border-bottom: 1px dashed var(--line); font-size: .92rem; }
+.topic-row:last-child { border-bottom: 0; }
+.quick { text-align: left; cursor: pointer; transition: border-color .15s, transform .15s; }
+.quick:hover { border-color: var(--ink); transform: translateY(-2px); }
+.quick b { font-family: var(--serif); font-size: 1.1rem; display: block; }
+
+/* notes */
+.note { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 14px; overflow: hidden; }
+.note > summary { cursor: pointer; padding: 16px 20px; list-style: none; display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+.note > summary::-webkit-details-marker { display: none; }
+.note > summary h2 { margin: 0; font-size: 1.25rem; }
+.note > summary::after { content: "+"; font: 700 1.4rem var(--serif); color: var(--ink-3); }
+.note[open] > summary::after { content: "–"; }
+.note .body { padding: 0 20px 20px; border-top: 1px solid var(--line); }
+.syl { font-size: .8rem; color: var(--ink-3); margin: 12px 0 0; padding-left: 10px; border-left: 3px solid var(--amber); }
+table { border-collapse: collapse; width: 100%; font-size: .92rem; margin: 8px 0 12px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { background: #f7f5f0; font-weight: 700; }
+.eq { font-family: var(--serif); font-size: 1.15rem; background: #f7f5f0; padding: 10px 14px; border-radius: 8px; }
+.eq span { color: var(--green); font-size: .9rem; }
+.tip { background: var(--amber-soft); border-left: 4px solid var(--amber); padding: 10px 14px; border-radius: 0 8px 8px 0; font-size: .93rem; }
+.search { width: 100%; max-width: 380px; padding: 9px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+
+/* quiz */
+.q { font-size: 1.12rem; font-weight: 700; margin: 10px 0 14px; }
+.opts { display: grid; gap: 8px; }
+.opt { text-align: left; border: 1.5px solid var(--line); background: var(--surface); border-radius: 8px; padding: 11px 14px; cursor: pointer; display: flex; gap: 12px; }
+.opt:hover:not(:disabled) { border-color: var(--ink); }
+.opt .l { font-weight: 700; color: var(--ink-3); }
+.opt.right { border-color: var(--green); background: var(--green-soft); }
+.opt.wrong { border-color: var(--red); background: var(--red-soft); }
+.opt:disabled { cursor: default; }
+.explain { margin-top: 12px; padding: 10px 14px; border-radius: 8px; background: #f7f5f0; font-size: .93rem; }
+.progress-line { height: 4px; background: var(--line); border-radius: 9px; margin: 6px 0 18px; }
+.progress-line i { display: block; height: 100%; background: var(--ink); border-radius: 9px; transition: width .3s; }
+
+textarea { width: 100%; min-height: 120px; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: #fdfcf9; resize: vertical; line-height: 1.5; }
+textarea:focus, .search:focus { outline: 2px solid var(--blue); outline-offset: 1px; }
+.feedback { white-space: pre-wrap; background: #f7f5f0; border-radius: 8px; padding: 14px 16px; font-size: .94rem; margin-top: 12px; }
+.feedback .score { font: 700 1.6rem var(--serif); color: var(--green); }
+.model { border-left: 3px solid var(--green); padding: 8px 14px; background: var(--green-soft); border-radius: 0 8px 8px 0; font-size: .93rem; margin-top: 10px; }
+.sa-list { display: grid; gap: 6px; }
+.sa-item { text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: 8px; padding: 10px 14px; cursor: pointer; display: flex; justify-content: space-between; gap: 10px; align-items: center; }
+.sa-item:hover { border-color: var(--ink); }
+.sa-item .done { color: var(--green); font-weight: 700; font-size: .85rem; white-space: nowrap; }
+.plan { counter-reset: p; list-style: none; padding: 0; margin: 8px 0; }
+.plan li { counter-increment: p; padding: 4px 0 4px 30px; position: relative; font-size: .93rem; }
+.plan li::before { content: counter(p); position: absolute; left: 0; top: 4px; width: 20px; height: 20px; border-radius: 50%; background: var(--ink); color: #fff; font-size: .72rem; display: grid; place-items: center; font-weight: 700; }
+
+/* flashcards */
+.flash { perspective: 1200px; height: 280px; max-width: 560px; margin: 0 auto; cursor: pointer; }
+.flash-in { position: relative; width: 100%; height: 100%; transition: transform .5s; transform-style: preserve-3d; }
+.flash.flipped .flash-in { transform: rotateY(180deg); }
+.face { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 14px; border: 1px solid var(--line); background: var(--surface); display: grid; place-items: center; padding: 28px; text-align: center; }
+.face.front h2 { font-size: 1.8rem; margin: 0; }
+.face.back { transform: rotateY(180deg); background: var(--ink); color: #fff; font-size: 1.15rem; }
+.face small { position: absolute; bottom: 14px; left: 0; right: 0; color: var(--ink-3); font-size: .8rem; }
+.face.back small { color: #a9b3b0; }
+
+/* diagrams */
+.diagram-wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; align-items: start; }
+.diagram svg { width: 100%; height: auto; display: block; }
+.org { cursor: pointer; transition: opacity .2s; }
+.org:hover { opacity: .8; }
+.org.dim { opacity: .25; }
+.org.hit { animation: pulse 0.6s ease 2; }
+@keyframes pulse { 50% { transform: scale(1.04); filter: brightness(1.2); } }
+.info { min-height: 220px; }
+.info h3 { margin-top: 0; font-size: 1.4rem; }
+.callout { font-size: .85rem; color: var(--ink-3); }
+canvas { width: 100%; display: block; border-radius: 8px; background: #fbfaf6; border: 1px solid var(--line); }
+input[type=range] { width: 100%; accent-color: var(--green); }
+.state-pill { font: 700 1.1rem var(--serif); padding: 4px 12px; border-radius: 6px; display: inline-block; }
+.state-solid { background: var(--blue-soft); color: var(--blue); }
+.state-liquid { background: var(--green-soft); color: var(--green); }
+.state-gas { background: var(--red-soft); color: var(--red); }
+.state-change { background: var(--amber-soft); color: #8a6512; }
+.ladder { display: flex; gap: 6px; flex-wrap: wrap; }
+.ladder button { flex: 1 1 120px; border: 1.5px solid var(--line); background: var(--surface); border-radius: 8px; padding: 12px 8px; cursor: pointer; font-weight: 700; text-align: center; }
+.ladder button[aria-pressed="true"] { border-color: var(--green); background: var(--green-soft); }
+.ladder .size { display: block; font-size: 1.6rem; }
+
+/* tutor */
+.chat { display: flex; flex-direction: column; height: calc(100vh - 210px); min-height: 420px; }
+.msgs { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; padding: 4px 2px 12px; }
+.msg { max-width: 80%; padding: 10px 14px; border-radius: 12px; white-space: pre-wrap; font-size: .95rem; }
+.msg.user { align-self: flex-end; background: var(--ink); color: #fff; border-bottom-right-radius: 3px; }
+.msg.bot { align-self: flex-start; background: var(--surface); border: 1px solid var(--line); border-bottom-left-radius: 3px; }
+.msg.err { background: var(--red-soft); border-color: var(--red); }
+.composer { display: flex; gap: 8px; }
+.composer textarea { min-height: 48px; height: 48px; }
+.suggest { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+
+.grade-tabs { display: flex; gap: 6px; margin-bottom: 12px; }
+.grade-tabs button { width: 44px; height: 44px; border-radius: 8px; border: 1.5px solid var(--line); background: var(--surface); font: 700 1.2rem var(--serif); cursor: pointer; }
+.grade-tabs button[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+ul.clean { padding-left: 18px; margin: 0; } ul.clean li { margin-bottom: 6px; }
+
+@media (max-width: 860px) {
+  .shell { grid-template-columns: 1fr; }
+  .side { position: sticky; top: 0; z-index: 5; height: auto; padding: 10px; flex-direction: row; align-items: center; gap: 10px; overflow-x: auto; }
+  .brand div, .side-foot { display: none; }
+  #nav { flex-direction: row; }
+  #nav button { white-space: nowrap; padding: 7px 10px; font-size: .85rem; }
+  .hero, .diagram-wrap { grid-template-columns: 1fr; }
+  main { padding-top: 20px; }
+  .chat { height: calc(100vh - 170px); }
+  .msg { max-width: 92%; }
+}
+@media print { .side { display: none; } .shell { display: block; } }
+
+/* timed mock */
+.mock-intro { max-width: 760px; }
+.mock-facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin: 22px 0; }
+.mock-facts div { background: var(--surface); padding: 18px 16px; }
+.mock-facts b { display: block; font: 700 2.2rem/1 var(--serif); color: var(--green); }
+.mock-facts span { color: var(--ink-3); font-size: .85rem; }
+.mock { display: grid; grid-template-columns: 220px 1fr; gap: 22px; align-items: start; }
+.mock-hud { position: sticky; top: 16px; background: var(--ink); color: #fff; border-radius: var(--radius); padding: 18px; display: flex; flex-direction: column; gap: 14px; }
+.mock-hud .muted { color: #ffffff99; margin: 0; }
+.mock-clock { font: 700 2.6rem/1 var(--serif); font-variant-numeric: tabular-nums; letter-spacing: .02em; }
+.mock-clock.warn { color: var(--amber); animation: pulse 1s ease-in-out infinite alternate; }
+@keyframes pulse { to { opacity: .55; } }
+.mock-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.mock-grid button { aspect-ratio: 1; border: 1px solid #ffffff33; background: transparent; color: #fff; border-radius: 6px; cursor: pointer; font-weight: 700; font-size: .85rem; position: relative; }
+.mock-grid button.ok { background: #ffffff22; }
+.mock-grid button.cur { background: #fff; color: var(--ink); }
+.mock-grid button.fl::after { content: ""; position: absolute; top: 3px; right: 3px; width: 6px; height: 6px; border-radius: 50%; background: var(--amber); }
+.mock-body textarea { min-height: 200px; }
+.opt.picked { border-color: var(--ink); background: var(--blue-soft); }
+.mock-score { display: flex; align-items: baseline; gap: 8px; margin: 4px 0 6px; }
+.mock-score b { font: 700 5rem/1 var(--serif); color: var(--green); }
+.mock-score span { font: 500 1.8rem var(--serif); color: var(--ink-3); }
+.mres { padding: 10px 0; border-top: 1px solid var(--line); }
+.mres.no b { color: var(--red); }
+.mres summary { cursor: pointer; }
+.small { font-size: .85rem; }
+@media (max-width: 760px) { .mock { grid-template-columns: 1fr; } .mock-hud { position: static; } .mock-facts { grid-template-columns: repeat(2, 1fr); } }
+
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside class="side">
+    <div class="brand">
+      <span class="brand-mark">7</span>
+      <div><b>Science Revision</b><small>Yearly Test · 10 Nov</small></div>
+    </div>
+    <nav id="nav"></nav>
+    <p class="side-foot" id="countdown"></p>
+  </aside>
+  <main id="main" tabindex="-1"></main>
+</div>
+<script>window.STUDY_API = "https://science-spark-study-studio.lovable.app";</script>
+<script>
+/* Year 7 Science — Question bank (Cells & Classification, Particles & States of Matter, Working Scientifically).
+   Separation techniques are intentionally NOT included. */
+(function () {
+  var T = { C: "Cells & Organelles", O: "Cell Organisation", K: "Classification & Living Things", P: "Particle Theory", H: "Heating Curves", W: "Working Scientifically" };
+  var mcq = [];
+  function M(t, q, o, a, e) { mcq.push({ id: mcq.length + 1, topic: t, q: q, o: o, a: a, e: e }); }
+
+  // ---------- CELLS & ORGANELLES (25) ----------
+  M("C", "Which organelle is known as the 'control centre' of the cell?", ["Mitochondria", "Nucleus", "Cytoplasm", "Cell wall"], 1, "The nucleus houses DNA and coordinates all cell activities.");
+  M("C", "Where is DNA mainly found in a plant or animal cell?", ["Cytoplasm", "Vacuole", "Nucleus", "Cell membrane"], 2, "DNA (the genetic blueprint) is stored inside the nucleus.");
+  M("C", "Which structure controls what enters and leaves a cell?", ["Cell wall", "Cell membrane", "Chloroplast", "Nucleus"], 1, "The cell membrane is selectively permeable — the 'gatekeeper'.");
+  M("C", "Cellular respiration occurs in the…", ["Chloroplast", "Nucleus", "Mitochondria", "Vacuole"], 2, "Mitochondria turn glucose into usable energy (ATP).");
+  M("C", "Photosynthesis takes place in the…", ["Mitochondria", "Chloroplast", "Cytoplasm", "Cell membrane"], 1, "Chloroplasts contain chlorophyll which captures light energy.");
+  M("C", "Which THREE structures are found in plant cells but NOT animal cells?", ["Nucleus, membrane, cytoplasm", "Cell wall, chloroplasts, large central vacuole", "Mitochondria, ribosomes, nucleus", "Cell wall, mitochondria, nucleus"], 1, "Only plant cells have a cell wall, chloroplasts and a large permanent vacuole.");
+  M("C", "Which structure is found in BOTH plant and animal cells?", ["Chloroplast", "Cell wall", "Mitochondria", "Large central vacuole"], 2, "Both cell types respire, so both contain mitochondria.");
+  M("C", "What is the jelly-like fluid where most chemical reactions happen?", ["Cytoplasm", "Vacuole sap", "Chlorophyll", "DNA"], 0, "Cytoplasm is the 'factory floor' and suspends the organelles.");
+  M("C", "What is the main function of the cell wall?", ["Makes glucose", "Provides support and strength", "Controls cell activities", "Releases energy"], 1, "The rigid cell wall supports the plant cell and stops it bursting.");
+  M("C", "What is the green pigment inside chloroplasts?", ["Haemoglobin", "Chlorophyll", "Glucose", "Cellulose"], 1, "Chlorophyll absorbs light for photosynthesis.");
+  M("C", "Which is the correct word equation for photosynthesis?", ["Glucose + oxygen → carbon dioxide + water", "Carbon dioxide + water → glucose + oxygen", "Oxygen + water → glucose + carbon dioxide", "Glucose + water → oxygen + carbon dioxide"], 1, "CO₂ + water → glucose + oxygen, using light energy.");
+  M("C", "What is the energy molecule produced by mitochondria?", ["DNA", "ATP", "CO₂", "Chlorophyll"], 1, "Mitochondria release energy as ATP.");
+  M("C", "Animal cells have vacuoles that are…", ["Large and permanent", "Small and temporary", "Filled with chlorophyll", "Absent always"], 1, "Animal cells only have small, temporary vacuoles.");
+  M("C", "Why do plant cells need BOTH chloroplasts and mitochondria?", ["Chloroplasts make glucose; mitochondria release its energy", "Both make glucose", "Mitochondria make glucose; chloroplasts store it", "They do the same job"], 0, "The 'Energy Team': chloroplasts manufacture food, mitochondria unlock it as ATP.");
+  M("C", "Turgor pressure is caused by…", ["The nucleus expanding", "The vacuole filling with water and pushing on the cell wall", "Mitochondria producing gas", "The membrane shrinking"], 1, "A full vacuole pushes against the rigid wall like a water balloon, keeping the plant upright.");
+  M("C", "A wilting plant has most likely…", ["Gained water in its vacuoles", "Lost water from its vacuoles", "Grown more chloroplasts", "Lost its nucleus"], 1, "Less water → less turgor pressure → the plant droops.");
+  M("C", "'Selectively permeable' means the membrane…", ["Lets everything through", "Lets nothing through", "Lets some substances through but not others", "Is made of cellulose"], 2, "It chooses what can pass in and out.");
+  M("C", "Plant and animal cells are both…", ["Prokaryotic", "Eukaryotic", "Without a nucleus", "Without a membrane"], 1, "Eukaryotic cells have a nucleus and membrane-bound organelles.");
+  M("C", "Which scientist first observed and named 'cells' while looking at cork?", ["Anton van Leeuwenhoek", "Robert Hooke", "Carl Linnaeus", "Theodor Schwann"], 1, "Robert Hooke saw tiny box-like spaces in cork and called them cells.");
+  M("C", "Who first observed living microorganisms using improved microscopes?", ["Robert Hooke", "Matthias Schleiden", "Anton van Leeuwenhoek", "Carl Linnaeus"], 2, "Van Leeuwenhoek improved lenses and saw 'animalcules'.");
+  M("C", "Which statement is part of cell theory?", ["Cells form from non-living matter", "All cells come from pre-existing cells", "Only animals are made of cells", "Cells are not alive"], 1, "Cell theory: all living things are made of cells, cells are the basic unit of life, cells come from pre-existing cells.");
+  M("C", "Schleiden concluded that…", ["All animals are made of cells", "All plants are made of cells", "Cells come from cork", "DNA is in the nucleus"], 1, "Schleiden — plants; Schwann — animals.");
+  M("C", "Which organelle would be MOST numerous in a muscle cell that uses lots of energy?", ["Chloroplasts", "Mitochondria", "Cell walls", "Vacuoles"], 1, "More respiration needed → more mitochondria.");
+  M("C", "Which cell would you expect to contain chloroplasts?", ["Human cheek cell", "Leaf palisade cell", "Red blood cell", "Root hair cell"], 1, "Leaf cells receive light; root cells are underground and lack chloroplasts.");
+  M("C", "The cell membrane in a plant cell is found…", ["Outside the cell wall", "Just inside the cell wall", "Inside the nucleus", "Inside the vacuole"], 1, "The membrane lies just inside the rigid cell wall.");
+
+  // ---------- ORGANISATION & SPECIALISED CELLS (18) ----------
+  M("O", "What is the correct order of organisation from simplest to most complex?", ["Tissue → cell → organ → organism → organ system", "Cell → tissue → organ → organ system → organism", "Cell → organ → tissue → organ system → organism", "Organism → organ system → organ → tissue → cell"], 1, "Specialised cell → tissue → organ → organ system → organism.");
+  M("O", "A group of similar cells working together to perform a function is a…", ["Organ", "Tissue", "Organ system", "Organism"], 1, "Similar specialised cells = tissue.");
+  M("O", "A structure made of two or more different tissues working together is a(n)…", ["Cell", "Tissue", "Organ", "Organelle"], 2, "e.g. the heart, a leaf or a root.");
+  M("O", "The heart is an example of a(n)…", ["Tissue", "Organ", "Organ system", "Cell"], 1, "It contains muscle, nerve and connective tissue.");
+  M("O", "The cardiovascular system is an example of a(n)…", ["Organ", "Tissue", "Organ system", "Specialised cell"], 2, "Heart + blood vessels working together.");
+  M("O", "Xylem is an example of a…", ["Plant tissue", "Plant organ", "Animal tissue", "Organelle"], 0, "Xylem (vascular) tissue transports water.");
+  M("O", "What adaptation helps a root hair cell absorb water?", ["A tail", "Long thin projection giving a large surface area", "No nucleus", "Biconcave shape"], 1, "More surface area = more water absorbed by osmosis.");
+  M("O", "Root hair cells absorb water by…", ["Photosynthesis", "Osmosis", "Respiration", "Evaporation"], 1, "Water moves into the root hair by osmosis.");
+  M("O", "Why does a red blood cell have no nucleus?", ["To make glucose", "To have more room to carry oxygen", "To swim faster", "To absorb water"], 1, "No nucleus + biconcave shape = more space and surface area for oxygen.");
+  M("O", "The biconcave shape of a red blood cell…", ["Reduces surface area", "Increases surface area for oxygen absorption", "Helps it photosynthesise", "Stores DNA"], 1, "A larger surface area speeds up oxygen uptake.");
+  M("O", "Which cell carries electrical impulses around the body?", ["Sperm cell", "Ciliated cell", "Nerve cell", "Egg cell"], 2, "Nerve cells are long to carry signals over distances.");
+  M("O", "Ciliated cells in the airways…", ["Absorb water", "Stop dust and bacteria entering the lungs", "Carry oxygen", "Make glucose"], 1, "Tiny hairs (cilia) sweep mucus and particles away.");
+  M("O", "Which feature helps a sperm cell reach the egg?", ["Cilia", "A tail", "Chloroplasts", "A cell wall"], 1, "The tail lets it swim; many mitochondria power it.");
+  M("O", "The egg cell's large food store (yolk) is used to…", ["Swim", "Support growth of the new cell", "Carry oxygen", "Send signals"], 1, "It nourishes the developing embryo.");
+  M("O", "A 'specialised cell' is a cell that…", ["Can do every job", "Has features suited to one specific job", "Has no organelles", "Is always a plant cell"], 1, "Its structure matches its function.");
+  M("O", "The root is an example of a plant…", ["Cell", "Tissue", "Organ", "Organism"], 2, "Roots contain several tissues (xylem, root hair tissue etc.).");
+  M("O", "Why does a root hair cell NOT need chloroplasts?", ["It is underground and receives no light", "It makes its own light", "It has a cell wall instead", "It has no cytoplasm"], 0, "No light underground → no photosynthesis possible.");
+  M("O", "Which pair is matched correctly?", ["Tissue — heart", "Organ — muscle tissue", "Organ system — digestive system", "Cell — lungs"], 2, "The digestive system is a collection of organs.");
+
+  // ---------- CLASSIFICATION & LIVING THINGS (14) ----------
+  M("K", "In MRS GREN, what does the 'E' stand for?", ["Energy", "Excretion", "Evolution", "Eating"], 1, "Excretion = removing waste.");
+  M("K", "Which is NOT a characteristic of living things?", ["Respiration", "Sensitivity", "Crystallisation", "Growth"], 2, "MRS GREN: Movement, Respiration, Sensitivity, Growth, Reproduction, Excretion, Nutrition.");
+  M("K", "Who created the binomial naming system?", ["Robert Hooke", "Carl Linnaeus", "Schwann", "Leeuwenhoek"], 1, "Linnaeus named organisms by genus and species.");
+  M("K", "Which is written correctly?", ["homo Sapiens", "Homo sapiens (in italics)", "HOMO SAPIENS", "Homo Sapiens"], 1, "Genus capitalised, species lowercase, italicised (underlined if handwritten).");
+  M("K", "In the name Felis catus, 'Felis' is the…", ["Species", "Genus", "Kingdom", "Family"], 1, "The first word is always the genus.");
+  M("K", "A dichotomous key has how many choices at each step?", ["One", "Two", "Three", "As many as needed"], 1, "'Di' = two.");
+  M("K", "A polar bear's thick fur is a…", ["Behavioural adaptation", "Structural adaptation", "Physiological adaptation", "Chemical change"], 1, "A physical body feature.");
+  M("K", "Bird migration is a…", ["Structural adaptation", "Behavioural adaptation", "Physiological adaptation", "Specialised cell"], 1, "It is an action/behaviour.");
+  M("K", "Snake venom production is a…", ["Structural adaptation", "Behavioural adaptation", "Physiological adaptation", "Tissue"], 2, "An internal body process.");
+  M("K", "Being nocturnal (active at night) is a…", ["Behavioural adaptation", "Structural adaptation", "Physiological adaptation", "Phase change"], 0, "It describes what an animal does.");
+  M("K", "Why do scientists classify organisms?", ["To make them extinct", "To identify, compare, organise and show relationships", "To change their DNA", "To count cells"], 1, "Classification organises the diversity of life.");
+  M("K", "Which characteristic means 'responding to changes in the environment'?", ["Nutrition", "Sensitivity", "Excretion", "Growth"], 1, "Sensitivity = detecting and responding to stimuli.");
+  M("K", "A rule of making a good dichotomous key is…", ["Repeat useful questions", "Use features that can change e.g. mood", "Use only two options per step", "Use three options per step"], 2, "Two clear, observable options each time.");
+  M("K", "Structural features can be used to classify organisms. Which feature separates plants from animals at the cell level?", ["Presence of a nucleus", "Presence of a cell wall and chloroplasts", "Presence of mitochondria", "Presence of cytoplasm"], 1, "Plant cells have walls and chloroplasts.");
+
+  // ---------- PARTICLE THEORY & STATES (22) ----------
+  M("P", "In a solid, particles…", ["Move rapidly in all directions", "Slide past each other", "Vibrate in fixed positions", "Do not move at all"], 2, "Solid particles only vibrate in a fixed lattice.");
+  M("P", "Which state has particles that are close together but randomly arranged?", ["Solid", "Liquid", "Gas", "None"], 1, "Liquid particles are close but can slide and roll past each other.");
+  M("P", "Which state has the WEAKEST attractive forces between particles?", ["Solid", "Liquid", "Gas", "All equal"], 2, "Gas forces are very weak/negligible so particles break free.");
+  M("P", "Which state has the STRONGEST attractive forces?", ["Solid", "Liquid", "Gas", "All equal"], 0, "Extremely strong forces lock solid particles in place.");
+  M("P", "Which state has a fixed volume but no fixed shape?", ["Solid", "Liquid", "Gas", "Plasma"], 1, "Liquids flow to take the container's shape but keep their volume.");
+  M("P", "Which state can be easily compressed?", ["Solid", "Liquid", "Gas", "None of them"], 2, "Gases have vast empty spaces between particles.");
+  M("P", "Why do gases fill their whole container?", ["Their particles get bigger", "Particles move rapidly and randomly with weak forces", "They are attracted to the walls", "They are heavier"], 1, "Fast particles with negligible attraction spread everywhere.");
+  M("P", "When a substance is heated, its particles…", ["Get bigger", "Gain kinetic energy and move faster", "Get smaller", "Stop moving"], 1, "The Particle Size Rule: particles never change size — only speed and spacing.");
+  M("P", "When a metal rod expands on heating, it is because…", ["Each particle grows bigger", "Particles vibrate more and move further apart", "New particles are made", "Particles lose energy"], 1, "Spacing increases; the particles themselves stay the same size.");
+  M("P", "Diffusion is the net movement of particles from…", ["Low to high concentration", "High to low concentration", "Solid to gas only", "Cold to hot"], 1, "Crowded → less crowded, until evenly mixed.");
+  M("P", "Diffusion happens fastest in…", ["Solids", "Liquids", "Gases", "All equally"], 2, "Gas particles move fastest with the most space.");
+  M("P", "A perfume smell spreading across a room is an example of…", ["Melting", "Diffusion", "Condensation", "Freezing"], 1, "Perfume particles move randomly from high to low concentration.");
+  M("P", "Diffusion stops when…", ["The particles stop moving", "The particles are evenly spread", "The temperature reaches 0 °C", "It never starts"], 1, "Particles keep moving but there is no NET movement once evenly mixed.");
+  M("P", "Why does water expand when it freezes?", ["Particles grow larger", "Particles form a wide hexagonal lattice with gaps", "Air enters the water", "It loses particles"], 1, "The water exception: ice forms an open hexagonal lattice, so ice floats.");
+  M("P", "Liquid to gas is called…", ["Condensation", "Evaporation/boiling", "Melting", "Freezing"], 1, "Vaporisation — evaporation at the surface, boiling throughout.");
+  M("P", "Gas to liquid is called…", ["Condensation", "Melting", "Sublimation", "Evaporation"], 0, "Condensation, e.g. clouds forming or mirror fogging.");
+  M("P", "Solid to liquid is called…", ["Freezing", "Melting (fusion)", "Condensation", "Boiling"], 1, "Melting is also called fusion.");
+  M("P", "In the water cycle, water vapour forming clouds is…", ["Evaporation", "Condensation", "Precipitation", "Melting"], 1, "Vapour cools and condenses into droplets.");
+  M("P", "In the water cycle, the Sun heating the ocean causes…", ["Condensation", "Evaporation", "Freezing", "Precipitation"], 1, "Liquid water gains energy and becomes vapour.");
+  M("P", "Snow and glaciers represent water in which state?", ["Solid", "Liquid", "Gas", "Plasma"], 0, "Ice is solid water.");
+  M("P", "Which statement about particles in all states is TRUE?", ["They are stationary in solids", "They are always moving", "They are bigger in gases", "They disappear when boiling"], 1, "Even solid particles vibrate constantly.");
+  M("P", "Honey flows slowly because…", ["It is a gas", "Its particles have stronger attractions than water's", "Its particles are bigger when warm", "It has no particles"], 1, "Stronger forces between liquid particles = more viscous.");
+
+  // ---------- HEATING CURVES (13) ----------
+  M("H", "On a heating curve, a flat plateau shows…", ["Temperature rising", "A change of state", "Particles getting bigger", "Cooling"], 1, "Temperature stays constant while the state changes.");
+  M("H", "During a plateau, the added heat energy is used to…", ["Speed particles up", "Break/overcome attractive forces between particles", "Make particles bigger", "Cool the substance"], 1, "Energy is absorbed to overcome forces, not to raise kinetic energy.");
+  M("H", "During the slanted (rising) sections of a heating curve, particles…", ["Slow down", "Gain kinetic energy and move faster", "Stop moving", "Break apart into atoms"], 1, "Thermal energy → kinetic energy → temperature rises.");
+  M("H", "The FIRST plateau on a heating curve of ice shows…", ["Boiling", "Melting", "Condensation", "Freezing"], 1, "Plateau 1 = fusion (melting).");
+  M("H", "The SECOND plateau on a heating curve of ice shows…", ["Melting", "Boiling", "Freezing", "Sublimation"], 1, "Plateau 2 = vaporisation (boiling).");
+  M("H", "Pure water at sea level boils at…", ["0 °C", "50 °C", "100 °C", "212 °C"], 2, "100 °C at standard pressure.");
+  M("H", "Pure ice melts at…", ["0 °C", "−10 °C", "100 °C", "37 °C"], 0, "Melting point of ice = 0 °C.");
+  M("H", "Why is the second plateau usually LONGER than the first for water?", ["Boiling needs more energy to completely separate particles", "The thermometer breaks", "Ice is heavier", "Gas particles are bigger"], 0, "Particles must break free almost entirely to become a gas.");
+  M("H", "A heating curve plateau occurs at 80 °C. This temperature is the substance's…", ["Melting or boiling point", "Room temperature", "Freezing time", "Mass"], 0, "Read the y-axis value at the plateau.");
+  M("H", "On a heating curve graph, the independent variable plotted on the x-axis is…", ["Temperature", "Time", "Mass", "Volume"], 1, "Time is changed/controlled; temperature is measured (y-axis).");
+  M("H", "Between the two plateaus of water's heating curve, the substance is…", ["Solid", "Liquid", "Gas", "Solid and gas"], 1, "Between melting and boiling it is a liquid being heated.");
+  M("H", "Adding salt to water changes its boiling point. If you see a plateau at 103 °C, the best conclusion is…", ["Thermometer is broken", "The water is not pure", "Water boils at 103 °C always", "It is melting"], 1, "Impurities change melting/boiling points.");
+  M("H", "A cooling curve shows the reverse process. The plateau when steam turns to water is…", ["Melting", "Condensation", "Freezing", "Sublimation"], 1, "Gas → liquid = condensation.");
+
+  // ---------- WORKING SCIENTIFICALLY (8) ----------
+  M("W", "In the heating water investigation, the dependent variable is…", ["Time", "Temperature of the water", "Type of beaker", "Bunsen burner"], 1, "It is what you measure.");
+  M("W", "Which is a controlled variable when heating water?", ["Temperature", "Volume of water used", "Time", "The results"], 1, "Keep volume the same for a fair test.");
+  M("W", "Repeating an experiment several times improves its…", ["Validity", "Reliability", "Accuracy of the thermometer", "Hypothesis"], 1, "Consistent repeated results = reliable.");
+  M("W", "Which piece of equipment is safest to wear when heating water?", ["Gloves only", "Safety goggles", "Sunglasses", "Nothing"], 1, "Goggles protect eyes from splashes and steam.");
+  M("W", "Which graph best shows how temperature changes over time?", ["Pie chart", "Line graph", "Column graph", "Pictogram"], 1, "Continuous data over time → line graph.");
+  M("W", "When drawing a scientific diagram you should…", ["Use pen and shade", "Use pencil, ruler for label lines, no shading", "Sketch lightly with arrows", "Use colour"], 1, "Pencil, title, ruler, horizontal labels, no shading/sketching.");
+  M("W", "Which microscope part do you look through?", ["Objective lens", "Eyepiece lens", "Stage", "Base"], 1, "The eyepiece (ocular) lens.");
+  M("W", "When making a wet mount slide, the coverslip is lowered slowly at an angle to…", ["Add colour", "Avoid trapping air bubbles", "Heat the slide", "Magnify more"], 1, "Air bubbles block the view of the specimen.");
+
+  // ---------- SHORT ANSWER (50) ----------
+  var sa = [];
+  function S(t, q, m, ans, kw) { sa.push({ id: sa.length + 1, topic: t, q: q, marks: m, ans: ans, kw: kw }); }
+  S("C", "Identify TWO structures found in both plant and animal cells.", 2, "Any two of: nucleus, cell membrane, cytoplasm, mitochondria.", [["nucleus"], ["membrane"], ["cytoplasm"], ["mitochondri"]]);
+  S("C", "Describe the function of the nucleus.", 2, "The nucleus controls all the activities of the cell (1) and contains DNA, the genetic information (1).", [["control", "coordinat", "boss"], ["dna", "genetic"]]);
+  S("C", "Describe the function of the cell membrane.", 2, "It controls what enters and leaves the cell (1) because it is selectively/partially permeable (1).", [["enter", "leave", "exit", "in and out"], ["selective", "partially permeable", "semi-permeable", "barrier"]]);
+  S("C", "Explain the role of mitochondria in a cell.", 3, "Mitochondria are the site of cellular respiration (1), where glucose is broken down (1) to release usable energy as ATP for growth and repair (1).", [["respiration"], ["glucose"], ["energy", "atp"]]);
+  S("C", "Explain why chloroplasts are needed in leaf cells.", 3, "Chloroplasts contain chlorophyll (1) which absorbs light energy (1) so photosynthesis can produce glucose (food) for the plant (1).", [["chlorophyll"], ["light"], ["photosynthesis", "glucose"]]);
+  S("C", "State the word equation for photosynthesis.", 2, "Carbon dioxide + water → glucose + oxygen (light energy needed). (1 reactants, 1 products)", [["carbon dioxide"], ["water"], ["glucose"], ["oxygen"]]);
+  S("C", "Describe the function of the cytoplasm.", 2, "Jelly-like substance (1) where chemical reactions take place and organelles are suspended (1).", [["jelly", "fluid"], ["reaction", "suspend", "hold"]]);
+  S("C", "Outline THREE differences between plant and animal cells.", 3, "Plant cells have a cell wall (1), chloroplasts (1), and a large central/permanent vacuole (1); animal cells do not (they only have small temporary vacuoles).", [["wall"], ["chloroplast"], ["vacuole"]]);
+  S("C", "Explain how turgor pressure keeps a plant upright.", 3, "The large central vacuole fills with water (1) and pushes outward against the rigid cell wall (1), creating pressure that acts like a skeleton to keep the plant firm/upright (1).", [["vacuole"], ["water"], ["wall", "push", "pressure"]]);
+  S("C", "Explain why a plant wilts when it is not watered.", 2, "Vacuoles lose water (1) so turgor pressure against the cell wall decreases and cells become floppy (1).", [["vacuole", "lose water", "loses water"], ["turgor", "pressure", "floppy", "limp"]]);
+  S("C", "Explain how chloroplasts and mitochondria work together in a plant cell.", 3, "Chloroplasts make glucose by photosynthesis (1); mitochondria use this glucose in respiration (1) to release energy/ATP that the cell uses (1).", [["chloroplast"], ["glucose"], ["mitochondri", "atp", "energy"]]);
+  S("C", "State the three parts of cell theory.", 3, "All living things are made of cells (1); cells are the basic unit of life (1); all cells come from pre-existing cells (1).", [["all living", "made of cells"], ["basic unit"], ["pre-existing", "existing cells", "come from"]]);
+  S("C", "Describe the contribution of Robert Hooke to cell science.", 2, "He was the first to observe cells (1) by looking at cork under a microscope and named them 'cells' (1).", [["first", "observe"], ["cork"]]);
+  S("C", "Explain why the cell wall is important to a plant that cannot move.", 2, "The rigid cell wall provides support and strength (1) and resists the push of the vacuole so cells don't burst, keeping the plant upright (1).", [["support", "strength", "rigid"], ["burst", "upright", "pressure"]]);
+
+  S("O", "List the levels of organisation from simplest to most complex.", 2, "Cell → tissue → organ → organ system → organism.", [["cell"], ["tissue"], ["organ system"], ["organism"]]);
+  S("O", "Define the term 'tissue' and give one example.", 2, "A group of similar specialised cells working together to perform a function (1), e.g. muscle tissue or xylem (1).", [["group", "similar"], ["muscle", "xylem", "nerve", "epithelial", "phloem", "vascular"]]);
+  S("O", "Define the term 'organ' and give one example.", 2, "A structure made of two or more different tissues working together (1), e.g. heart, root, leaf, lungs (1).", [["tissues", "different"], ["heart", "root", "leaf", "lung", "stomach", "brain", "stem"]]);
+  S("O", "Describe how the root hair cell is adapted to its function.", 2, "It has a long, thin projection giving a large surface area (1) to absorb more water and minerals by osmosis (1).", [["surface area"], ["water", "mineral", "osmosis"]]);
+  S("O", "Describe TWO adaptations of a red blood cell.", 2, "Biconcave shape for large surface area (1); no nucleus to make room for more oxygen (1).", [["biconcave"], ["nucleus"]]);
+  S("O", "Explain how a nerve cell is adapted to its function.", 2, "It is long (1) so it can carry electrical impulses over long distances around the body (1).", [["long"], ["impulse", "signal", "electric"]]);
+  S("O", "Describe the function of ciliated cells.", 2, "They have tiny hairs (cilia) (1) that trap/sweep away dust and bacteria to stop them entering the lungs (1).", [["hair", "cilia"], ["dust", "bacteria", "lung"]]);
+  S("O", "Explain the difference between an organ and an organ system.", 2, "An organ is made of different tissues doing a job (1); an organ system is several organs working together (1).", [["tissue"], ["organs"]]);
+  S("O", "Using the plant as an example, describe one specialised cell, tissue, organ and organ system.", 4, "Cell: root hair cell (1); tissue: xylem/vascular tissue (1); organ: root (1); organ system: root system (1).", [["root hair"], ["xylem", "vascular", "tissue"], ["root"], ["system"]]);
+  S("O", "Describe one adaptation of a sperm cell and explain how it helps.", 2, "It has a tail (1) to swim to the egg to deliver genetic information (1).", [["tail"], ["swim", "egg"]]);
+  S("O", "What is a specialised cell?", 2, "A cell with unique features/adaptations (1) designed to do one specific job (1).", [["feature", "adapt", "structure"], ["job", "function"]]);
+
+  S("K", "State what MRS GREN stands for.", 3, "Movement, Respiration, Sensitivity, Growth, Reproduction, Excretion, Nutrition. (3 marks all 7; 2 marks 5–6; 1 mark 3–4)", [["movement"], ["respiration"], ["sensitivity"], ["growth"], ["reproduction"], ["excretion"], ["nutrition"]]);
+  S("K", "Outline the rules for writing a binomial (scientific) name.", 3, "Two parts: genus then species (1); genus has a capital letter and species is lowercase (1); written in italics or underlined (1).", [["genus"], ["capital"], ["italic", "underline"]]);
+  S("K", "Distinguish between structural and behavioural adaptations with an example of each.", 4, "Structural = physical feature (1), e.g. polar bear fur (1); behavioural = action (1), e.g. migration (1).", [["physical", "body"], ["fur", "beak", "claw", "spine", "shape"], ["action", "behav", "does"], ["migrat", "nocturnal", "hibernat"]]);
+  S("K", "What is a physiological adaptation? Give an example.", 2, "An internal body process that helps survival (1), e.g. producing venom/toxins (1).", [["internal", "process", "inside"], ["venom", "toxin", "sweat"]]);
+  S("K", "Describe the rules for constructing a dichotomous key.", 3, "Only two options per step (1); no repeated questions (1); continue until only one organism remains (1). Use observable features.", [["two"], ["repeat"], ["one organism", "remain", "identified"]]);
+  S("K", "Give TWO reasons scientists classify organisms.", 2, "Any two: to identify organisms, compare them, organise living things, show relationships.", [["identif"], ["compar"], ["organis"], ["relationship"]]);
+
+  S("P", "Describe the arrangement and movement of particles in a solid.", 2, "Tightly packed in a fixed, regular lattice (1); vibrate in fixed positions (1).", [["packed", "lattice", "regular", "close"], ["vibrat"]]);
+  S("P", "Describe the arrangement and movement of particles in a liquid.", 2, "Close together but randomly arranged (1); slide/roll past each other (1).", [["close", "random"], ["slide", "roll", "move past", "flow"]]);
+  S("P", "Describe the arrangement and movement of particles in a gas.", 2, "Widely spread out with lots of empty space (1); move rapidly and randomly in all directions (1).", [["spread", "space", "far"], ["rapid", "fast", "random"]]);
+  S("P", "Compare the attractive forces between particles in solids, liquids and gases.", 3, "Solids: very strong (1); liquids: weaker, allowing flow (1); gases: very weak/negligible (1).", [["solid"], ["liquid"], ["gas"], ["strong"], ["weak"]]);
+  S("P", "Explain why liquids take the shape of their container but solids do not.", 3, "Liquid particles have weaker forces (1) so they can slide past each other and flow (1); solid particles are held by strong forces in fixed positions (1).", [["weak"], ["slide", "flow"], ["strong", "fixed"]]);
+  S("P", "Explain why gases can be compressed but solids cannot.", 2, "Gas particles have lots of empty space between them so they can be pushed closer (1); solid particles are already tightly packed (1).", [["space"], ["packed", "close"]]);
+  S("P", "Define diffusion.", 2, "The net movement of particles from high concentration to low concentration (1) due to their random motion, until evenly mixed (1).", [["high"], ["low"], ["random", "even"]]);
+  S("P", "Explain why diffusion is faster in a gas than in a liquid.", 2, "Gas particles move faster (1) and have more space between them (1).", [["fast", "energy"], ["space"]]);
+  S("P", "A student says 'particles get bigger when heated'. Correct this statement.", 2, "Particles never change size (1); heating increases their kinetic energy/speed and the spacing between them (1).", [["size", "same", "never"], ["energy", "faster", "spac", "apart"]]);
+  S("P", "Explain why ice floats on water.", 2, "When water freezes its particles form a wide hexagonal lattice with gaps (1) so ice is less dense than liquid water (1).", [["hexagon", "lattice", "expand"], ["dens"]]);
+  S("P", "Name the change of state for: (a) liquid → gas, (b) gas → liquid.", 2, "(a) evaporation/boiling (vaporisation) (1); (b) condensation (1).", [["evapor", "boil", "vapori"], ["condens"]]);
+  S("P", "Describe how the three states of water are represented in the water cycle.", 3, "Liquid: oceans, rivers, rain (1); gas: water vapour after evaporation (1); solid: ice, snow, glaciers (1).", [["ocean", "river", "rain", "lake"], ["vapour", "evapor"], ["ice", "snow", "glacier"]]);
+
+  S("H", "Explain why the temperature stays constant during melting.", 3, "Heat energy is still being added (1) but it is used to overcome/break the attractive forces between particles (1) instead of increasing their kinetic energy, so temperature doesn't rise (1).", [["energy"], ["force", "bond", "attract"], ["kinetic", "speed", "not increase"]]);
+  S("H", "Explain what is happening to particles on a sloping section of a heating curve.", 2, "Thermal energy is converted into kinetic energy (1) so particles move/vibrate faster and the temperature rises (1).", [["kinetic", "energy"], ["faster", "temperature rise", "increase"]]);
+  S("H", "A heating curve shows plateaus at 0 °C and 100 °C. Identify what is happening at each.", 2, "0 °C: melting (solid → liquid) (1); 100 °C: boiling (liquid → gas) (1).", [["melt", "fusion"], ["boil", "vapori", "evapor"]]);
+  S("W", "Identify the independent, dependent and one controlled variable in an investigation heating water over time.", 3, "Independent: time (1); dependent: temperature (1); controlled: e.g. volume of water, heat source, beaker type (1).", [["time"], ["temperature"], ["volume", "amount", "beaker", "burner", "heat source", "same"]]);
+  S("W", "Describe TWO safety precautions when heating water with a Bunsen burner.", 2, "Wear safety goggles (1); tie hair back/use heatproof mat/don't touch hot equipment/stand while heating (1).", [["goggle", "glasses"], ["hair", "mat", "tongs", "stand", "touch", "apron"]]);
+  S("W", "List FOUR rules for a scientific drawing.", 2, "Any four: pencil, title, ruler for label lines, horizontal labels, no shading, no sketching. (2 marks for 4; 1 mark for 2–3)", [["pencil"], ["title"], ["ruler"], ["label"], ["shad"], ["sketch"]]);
+  S("W", "Describe how to prepare a wet mount slide.", 3, "Place the specimen on the slide (1); add a drop of water/stain (1); lower the coverslip slowly at an angle to avoid air bubbles (1).", [["specimen", "sample"], ["water", "stain", "drop"], ["coverslip", "bubble"]]);
+
+  window.STUDY_Q = { topics: T, mcq: mcq, sa: sa };
+})();
+
+</script>
+<script>
+/* Notes, flashcards, long responses, syllabus & grade descriptors */
+(function () {
+  var notes = [
+    { id: "cells", topic: "C", title: "1. Cell structure & organelles", syl: "SC4-CLS-01 · Identify structures common to plant & animal cells; describe functions of membrane, cytoplasm, nucleus (DNA), mitochondria, chloroplasts",
+      html: [
+        "<h3>Cell theory</h3><ol><li>All living things are made of cells.</li><li>Cells are the basic unit of life.</li><li>All cells come from pre-existing cells.</li></ol>",
+        "<h3>The scientists</h3><table><tr><th>Who</th><th>What they did</th></tr><tr><td>Robert Hooke</td><td>First to observe cells — looked at <b>cork</b> and named them “cells”.</td></tr><tr><td>Anton van Leeuwenhoek</td><td>Improved microscopes; first to see living microorganisms.</td></tr><tr><td>Schleiden</td><td>All <b>plants</b> are made of cells.</td></tr><tr><td>Schwann</td><td>All <b>animals</b> are made of cells.</td></tr></table>",
+        "<h3>Plant vs animal cells</h3><p><b>Both</b> are eukaryotic and contain: nucleus, cell membrane, cytoplasm, mitochondria (plus ribosomes, ER, Golgi, lysosomes).</p><p><b>Plant only:</b> rigid <mark>cell wall</mark>, <mark>chloroplasts</mark>, <mark>large central vacuole</mark>. Animal cells only have small, temporary vacuoles.</p>",
+        "<h3>The “Big 5” organelles</h3><table><tr><th>Organelle</th><th>Nickname</th><th>Function</th></tr><tr><td>Nucleus</td><td>Control centre / boss</td><td>Holds DNA (genetic blueprint); coordinates all cell activities.</td></tr><tr><td>Cell membrane</td><td>Gatekeeper</td><td>Flexible barrier that controls what enters and exits — <i>selectively permeable</i>.</td></tr><tr><td>Cytoplasm</td><td>Factory floor</td><td>Jelly-like fluid where chemical reactions occur; suspends organelles.</td></tr><tr><td>Mitochondria</td><td>Powerhouse</td><td>Cellular respiration: glucose → usable energy (ATP) for growth & repair.</td></tr><tr><td>Chloroplasts</td><td>Solar panels (plants only)</td><td>Contain chlorophyll; photosynthesis makes glucose.</td></tr></table><p>Also: <b>cell wall</b> — support & strength; <b>vacuole</b> — stores water, maintains turgor pressure.</p>",
+        "<h3>Photosynthesis</h3><p class='eq'>carbon dioxide + water <span>— light →</span> glucose + oxygen</p>",
+        "<h3>The stationary survival team</h3><p>Plants can't move to find food or escape danger, so their organelles work as teams:</p><ul><li><b>Energy team:</b> chloroplast makes glucose → mitochondria unlock it as ATP.</li><li><b>Posture team (turgor pressure):</b> the vacuole fills with water like a water balloon and pushes against the rigid wall — acting like a skeleton that keeps the plant crisp and upright. Lose water → wilting.</li></ul>",
+        "<h3>Leaves: stomata & guard cells</h3><ul><li><b>Stomata</b> — tiny openings for gas exchange: CO₂ in (for photosynthesis), O₂ out.</li><li><b>Guard cells</b> — full of water → stoma opens; lose water → stoma closes (prevents water loss).</li><li><b>Transpiration</b> — water leaves as vapour through the stomata.</li></ul>"
+      ] },
+    { id: "org", topic: "O", title: "2. Specialised cells & organisation", syl: "SC4-CLS-01 · Represent the arrangement of specialised cells in tissues and in organs",
+      html: [
+        "<h3>The hierarchy</h3><p class='eq'>specialised cell → tissue → organ → organ system → organism</p><table><tr><th>Level</th><th>Definition</th><th>Plant e.g.</th><th>Animal e.g.</th></tr><tr><td>Specialised cell</td><td>Unique features for one specific job</td><td>Root hair cell</td><td>Muscle cell</td></tr><tr><td>Tissue</td><td>Group of <i>similar</i> cells performing a function</td><td>Xylem (vascular)</td><td>Muscle tissue</td></tr><tr><td>Organ</td><td>Two or more <i>different</i> tissues cooperating</td><td>Root</td><td>Heart</td></tr><tr><td>Organ system</td><td>Different organs working together</td><td>Root system</td><td>Cardiovascular system</td></tr></table>",
+        "<h3>Specialised cells</h3><table><tr><th>Cell</th><th>Adaptation</th><th>Function</th></tr><tr><td>Root hair</td><td>Long thin projection → large surface area</td><td>Absorbs water (osmosis) & minerals</td></tr><tr><td>Red blood cell</td><td>Biconcave, no nucleus</td><td>Carries oxygen</td></tr><tr><td>Nerve</td><td>Long</td><td>Carries electrical impulses</td></tr><tr><td>Sperm</td><td>Tail</td><td>Carries genetic info to the egg</td></tr><tr><td>Egg</td><td>Large yolk/food store</td><td>Supports new cell growth</td></tr><tr><td>Ciliated</td><td>Tiny hairs (cilia)</td><td>Stops dust & bacteria entering lungs</td></tr></table>",
+        "<p class='tip'>Root hair: intake = long projection absorbs water by osmosis; the cell wall regulates quantity so the cell doesn't absorb too much and burst.</p>"
+      ] },
+    { id: "class", topic: "K", title: "3. Living things & classification", syl: "SC4-CLS-01 · How structural features can be used to classify organisms",
+      html: [
+        "<h3>MRS GREN</h3><p><b>M</b>ovement · <b>R</b>espiration · <b>S</b>ensitivity · <b>G</b>rowth · <b>R</b>eproduction · <b>E</b>xcretion · <b>N</b>utrition</p>",
+        "<h3>Why classify?</h3><p>To identify, compare and organise organisms and to show relationships.</p><h3>Binomial naming (Carl Linnaeus)</h3><p><i>Genus species</i> — e.g. <i>Homo sapiens</i>. Genus capital, species lowercase, italics (underline when handwritten).</p>",
+        "<h3>Adaptations</h3><ul><li><b>Structural</b> — physical feature (polar bear fur, long beak).</li><li><b>Behavioural</b> — action (migration, nocturnal).</li><li><b>Physiological</b> — internal process (venom, toxins).</li></ul><h3>Dichotomous keys</h3><p>Questions with TWO choices each step; no repeated questions; continue until one organism remains.</p>"
+      ] },
+    { id: "part", topic: "P", title: "4. Particle theory & states of matter", syl: "SC4-SOL-01 · Identify 3 states & the water cycle; represent particle arrangement & movement; compare attractive forces",
+      html: [
+        "<p>Matter is made of particles. How a substance behaves depends on particle size, the spacing between them, their speed and how strongly they attract.</p>",
+        "<table><tr><th></th><th>Solid (ice)</th><th>Liquid (water)</th><th>Gas (steam)</th></tr><tr><td>Arrangement</td><td>Fixed, regular lattice; tightly packed</td><td>Random, but still close</td><td>Widely spread, lots of empty space</td></tr><tr><td>Movement</td><td>Vibrate in fixed positions</td><td>Slide & roll past each other</td><td>Rapid & random in all directions</td></tr><tr><td>Attractive forces</td><td>Extremely strong</td><td>Weaker — allows flow</td><td>Very weak / negligible</td></tr><tr><td>Shape & volume</td><td>Fixed shape, fixed volume</td><td>No fixed shape, fixed volume</td><td>No fixed shape or volume</td></tr></table>",
+        "<h3>Key ideas</h3><ul><li><b>Diffusion</b> — net movement of particles from high → low concentration due to random motion, until evenly mixed.</li><li><b>Particle size rule</b> — particles NEVER change size. Heating changes only their kinetic energy (speed) and spacing.</li><li><b>The water exception</b> — water expands when it freezes into a wide hexagonal lattice (so ice floats).</li></ul>",
+        "<h3>Water on Earth</h3><p>Solid: ice caps, glaciers, snow · Liquid: oceans, rivers, rain · Gas: water vapour. Evaporation (sun heats oceans) → condensation (clouds) → precipitation → collection.</p>"
+      ] },
+    { id: "heat", topic: "H", title: "5. Heating curves & changes of state", syl: "SC4-SOL-01 · Measure & graph temperature of water as heated; identify changes of state",
+      html: [
+        "<p><b>Slanted lines</b> (temperature rising): thermal energy → kinetic energy; particles move faster, thermometer rises.</p><p><b>Flat plateaus</b> (temperature constant): heat is still added but kinetic energy does NOT increase. Energy is absorbed to <mark>overcome the attractive forces</mark> so the state can change.</p>",
+        "<ul><li>Plateau 1 = <b>melting / fusion</b> (water: 0 °C)</li><li>Plateau 2 = <b>boiling / vaporisation</b> (water: 100 °C) — usually longer.</li></ul><p class='tip'>Exam tip: always read the exact number off the vertical axis to state the melting or boiling point, and refer to the stimulus data.</p>",
+        "<h3>Names of changes</h3><p>melting (s→l) · freezing (l→s) · evaporation/boiling (l→g) · condensation (g→l) · sublimation (s→g)</p>"
+      ] },
+    { id: "ws", topic: "W", title: "6. Working scientifically", syl: "SC4-WS-04 · Follows a planned procedure to undertake safe and valid investigations",
+      html: [
+        "<h3>Variables</h3><ul><li><b>Independent</b> — what you change (time).</li><li><b>Dependent</b> — what you measure (temperature).</li><li><b>Controlled</b> — kept the same (volume of water, heat source, beaker).</li></ul><p><b>Valid</b> = fair test measuring what it should. <b>Reliable</b> = repeated results are consistent. <b>Accurate</b> = close to the true value.</p>",
+        "<h3>Graphing</h3><p>Line graph for continuous data. Title, labelled axes with units, independent on x, dependent on y, even scale, line of best fit.</p>",
+        "<h3>Microscope</h3><p>Eyepiece (look through) · Objective lens (magnifies) · Stage (holds slide) · Focus wheel · Lamp · Arm (carry) · Base (support).</p><h3>Wet mount</h3><p>Specimen on slide → drop of water/stain → lower coverslip at an angle (no bubbles) → observe.</p><h3>Scientific drawings</h3><p>Pencil · title · ruler · horizontal labels · no shading · no sketching.</p>",
+        "<h3>SOLO writing (long responses)</h3><p>Identify → Describe → Explain (because… therefore…) → <b>Link</b> ideas together and use the stimulus.</p>"
+      ] }
+  ];
+
+  var cards = [
+    ["Nucleus", "Control centre. Contains DNA and coordinates cell activities."], ["Cell membrane", "Gatekeeper. Selectively permeable — controls what enters/exits."], ["Cytoplasm", "Jelly-like fluid; site of chemical reactions; suspends organelles."], ["Mitochondria", "Powerhouse. Respiration: glucose → energy (ATP)."], ["Chloroplast", "Solar panel. Contains chlorophyll; photosynthesis makes glucose."], ["Cell wall", "Rigid layer (plants only) giving support and strength."], ["Large central vacuole", "Stores water; maintains turgor pressure (plants)."], ["Turgor pressure", "Water-filled vacuole pushes on the cell wall, keeping the plant upright."], ["Photosynthesis equation", "Carbon dioxide + water → glucose + oxygen (light)."], ["3 plant-only structures", "Cell wall, chloroplasts, large central vacuole."], ["Cell theory", "All living things are made of cells; basic unit of life; come from pre-existing cells."], ["Robert Hooke", "First to observe and name cells (cork)."], ["Van Leeuwenhoek", "Improved microscopes; saw living microorganisms."], ["Schleiden / Schwann", "Plants made of cells / animals made of cells."], ["Stomata", "Leaf pores for gas exchange (CO₂ in, O₂ out)."], ["Guard cells", "Open (full of water) and close the stomata."], ["Transpiration", "Water lost as vapour through stomata."],
+    ["Hierarchy", "Cell → tissue → organ → organ system → organism."], ["Tissue", "Group of similar cells performing a function (e.g. xylem)."], ["Organ", "Two or more different tissues working together (e.g. heart, root)."], ["Organ system", "Different organs working together (e.g. cardiovascular)."], ["Root hair cell", "Large surface area → absorbs water by osmosis."], ["Red blood cell", "Biconcave, no nucleus → carries oxygen."], ["Nerve cell", "Long → carries electrical impulses."], ["Ciliated cell", "Cilia stop dust & bacteria entering lungs."], ["Sperm / egg cell", "Tail to swim / yolk food store for growth."],
+    ["MRS GREN", "Movement, Respiration, Sensitivity, Growth, Reproduction, Excretion, Nutrition."], ["Binomial name", "Genus (capital) + species (lowercase), italics. e.g. Homo sapiens."], ["Carl Linnaeus", "Created binomial naming system."], ["Structural adaptation", "Physical feature, e.g. polar bear fur."], ["Behavioural adaptation", "Action, e.g. migration."], ["Physiological adaptation", "Internal process, e.g. venom."], ["Dichotomous key", "Two choices per step until one organism remains."],
+    ["Solid particles", "Fixed lattice, vibrate in place, very strong forces."], ["Liquid particles", "Close, random, slide past; weaker forces."], ["Gas particles", "Far apart, fast & random; negligible forces."], ["Diffusion", "Net movement from high → low concentration via random motion."], ["Particle size rule", "Particles never change size — only speed and spacing."], ["Water exception", "Water expands when freezing (hexagonal lattice) — ice floats."], ["Condensation", "Gas → liquid."], ["Evaporation", "Liquid → gas at the surface."],
+    ["Heating curve slope", "Energy → kinetic energy; temperature rises."], ["Heating curve plateau", "Energy breaks attractive forces; temperature constant; state changes."], ["Plateau 1 / Plateau 2", "Melting (fusion) / boiling (vaporisation)."], ["Melting & boiling point of water", "0 °C and 100 °C."],
+    ["Independent variable", "What you change (x-axis)."], ["Dependent variable", "What you measure (y-axis)."], ["Reliability", "Consistent results when repeated."], ["Validity", "A fair test that measures what it is meant to."], ["Scientific drawing rules", "Pencil, title, ruler, horizontal labels, no shading/sketching."]
+  ];
+
+  var long = [
+    { id: 1, topic: "C", marks: 6, q: "Compare plant and animal cells, explaining how the structures unique to plant cells help a plant survive even though it cannot move.",
+      plan: ["Identify shared structures", "Identify 3 plant-only structures", "Explain each function", "LINK: energy team & posture team → survival without moving"],
+      model: "Plant and animal cells are both eukaryotic and share a nucleus (containing DNA, controlling the cell), a cell membrane (selectively permeable gatekeeper), cytoplasm (site of reactions) and mitochondria (respiration releasing ATP). However, plant cells also have a rigid cell wall, chloroplasts and a large central vacuole, while animal cells only have small temporary vacuoles. Because plants cannot move to find food, chloroplasts use light, carbon dioxide and water to make glucose by photosynthesis; the mitochondria then release this energy as ATP — together they form an 'energy team'. Plants also cannot move to hold themselves up, so the vacuole fills with water and pushes against the rigid cell wall, creating turgor pressure that acts like a skeleton keeping the plant upright. Therefore these unique structures allow a stationary plant to make its own food and stay upright to reach light." },
+    { id: 2, topic: "O", marks: 5, q: "Using the root hair cell as an example, explain how specialised cells are organised into tissues, organs and organ systems.",
+      plan: ["Define specialised cell + adaptation", "Tissue example", "Organ example", "Organ system", "LINK to whole plant survival"],
+      model: "A specialised cell has features suited to one job: the root hair cell has a long thin projection giving a large surface area to absorb water by osmosis. Many similar root hair cells form root hair tissue, and water passes to xylem (vascular) tissue. Different tissues such as these cooperate to form an organ — the root. Many roots work together as the root system, an organ system that anchors the plant and supplies water and minerals. This water is needed for photosynthesis and turgor pressure, so organisation lets the organism survive." },
+    { id: 3, topic: "P", marks: 6, q: "Explain the differences in the behaviour of solids, liquids and gases using particle theory, including the strength of attractive forces.",
+      plan: ["Arrangement for each state", "Movement for each state", "Attractive forces ranking", "LINK to shape, volume, compressibility, flow"],
+      model: "In a solid the particles are tightly packed in a fixed lattice and only vibrate because the attractive forces are extremely strong; therefore solids have a fixed shape and volume and cannot be compressed. In a liquid the particles are still close but randomly arranged; the attractive forces are weaker, so particles slide past each other, which is why liquids flow and take the container's shape while keeping a fixed volume. In a gas the attractive forces are negligible, so particles move rapidly and randomly with large spaces between them; therefore gases fill their container and can be compressed. As attractive force decreases from solid to liquid to gas, particle freedom of movement increases." },
+    { id: 4, topic: "H", marks: 6, q: "A student heated ice from −20 °C until it boiled. The graph showed flat sections at 0 °C and 100 °C. Explain the shape of the heating curve using particle theory.",
+      plan: ["Describe slopes (KE ↑)", "Plateau 1 at 0 °C = melting", "Plateau 2 at 100 °C = boiling", "Why temperature is constant", "Refer to stimulus values"],
+      model: "On the sloped sections, heat energy is converted into kinetic energy so the particles vibrate or move faster and the temperature rises (from −20 °C to 0 °C as a solid, 0 °C to 100 °C as a liquid, then above 100 °C as a gas). At 0 °C the graph is flat: this is the melting point. Although heat is still added, the kinetic energy does not increase; instead the energy is used to overcome the strong attractive forces holding the ice lattice together so it becomes liquid. At 100 °C the second, longer plateau is the boiling point, where energy breaks the remaining attractive forces so particles escape as gas. The second plateau is longer because more energy is needed to separate particles completely." },
+    { id: 5, topic: "W", marks: 5, q: "Design a safe and valid investigation to measure how the temperature of water changes as it is heated over time.",
+      plan: ["Aim & variables (IV, DV, CV)", "Equipment & method steps", "Safety", "Reliability (repeat)", "Graph type"],
+      model: "Aim: to measure the temperature of water as it is heated over time. The independent variable is time, the dependent variable is temperature, and controlled variables are the volume of water (e.g. 100 mL), the same beaker and the same Bunsen flame. Method: set up a tripod, gauze and heatproof mat; pour 100 mL of water into a beaker; record the starting temperature with a thermometer; light the Bunsen on the blue flame and record the temperature every minute until it has boiled for 3 minutes. Safety: wear goggles, tie hair back, stand while heating and do not touch hot glassware. Repeat three times and average to improve reliability. Plot a line graph of temperature (y) against time (x) and identify the boiling plateau." },
+    { id: 6, topic: "P", marks: 4, q: "Explain how the three states of water are represented in the water cycle, describing the particle changes during evaporation and condensation.",
+      plan: ["Solid/liquid/gas examples on Earth", "Evaporation: particles gain energy", "Condensation: particles lose energy", "LINK forces"],
+      model: "Water exists as a solid in ice caps, glaciers and snow, as a liquid in oceans, rivers and rain, and as a gas as water vapour. During evaporation the Sun heats water, the particles gain kinetic energy and overcome the attractive forces so they escape as vapour and spread out. As the vapour rises and cools, the particles lose energy, move slower and the attractive forces pull them closer together so they condense into droplets forming clouds, which fall as precipitation." }
+  ];
+
+  var grades = {
+    A: ["Explain similarities & differences between plant and animal cells, incl. structures, organelles and functions.", "Explain how membrane, cytoplasm, nucleus (DNA), mitochondria and chloroplasts contribute to cell function.", "Explain how specialised cells are organised into tissues and organs, using scientific examples and terminology.", "Explain properties of solids, liquids, gases in terms of arrangement, movement and attractive forces.", "Explain changes of state using particle theory; identify melting/boiling points from data.", "Make informed predictions; analyse data with high competency; present using high-level scientific language and the right graph."],
+    B: ["Describe similarities & differences incl. most structures and functions.", "Describe functions of the five key organelles.", "Describe organisation into tissues & organs with examples.", "Describe properties of states in terms of arrangement, movement and forces.", "Describe changes of state; interpret data for melting/boiling points.", "Analyse data competently; present with appropriate scientific language."],
+    C: ["Identify common structures and describe some functions.", "Describe functions of some organelles.", "Represent organisation of specialised cells into tissues and organs.", "Describe basic properties of states and represent particle arrangement.", "Identify changes of state; identify some features of melting/boiling.", "Use some scientific language; draw graphs."],
+    D: ["Identify some cell structures.", "Identify some functions.", "Identify examples of specialised cells, tissues, organs.", "Identify states and some differences.", "Identify basic changes of state; recognise some patterns.", "Basic scientific language."],
+    E: ["Identify examples of plant and animal cells and some structures.", "Recognise cells form larger structures.", "Identify examples of solids, liquids, gases.", "Recognise substances change state when heated.", "Limited scientific language."]
+  };
+
+  var exam = "Tuesday 10 November · 1 hour + 5 min reading · 35 marks · 20% · Part A: Collecting & analysing data (practical) · Part B: Working scientifically skills. Bring 2 pens, 2 pencils, eraser, ruler, calculator, apron & goggles.";
+
+  window.STUDY_N = { notes: notes, cards: cards, long: long, grades: grades, exam: exam };
+})();
+
+</script>
+<script>
+/* Year 7 Science revision hub — plain JS so it also runs as a downloaded file. */
+(function () {
+  "use strict";
+  var Q = window.STUDY_Q, N = window.STUDY_N, T = Q.topics;
+  var API = (window.STUDY_API || "").replace(/\/+$/, "");
+  var main = document.getElementById("main");
+  var EXAM = new Date("2026-11-10T09:00:00+11:00");
+
+  // ---------- helpers ----------
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function $(sel, root) { return (root || document).querySelector(sel); }
+  function $$(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
+  function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function tag(t) { return '<span class="tag ' + t + '">' + esc(T[t]) + "</span>"; }
+
+  // ---------- saved progress ----------
+  var KEY = "y7sci-progress-v1";
+  var S;
+  try { S = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { S = {}; }
+  S.t = S.t || {}; S.mcq = S.mcq || {}; S.sa = S.sa || {}; S.lr = S.lr || {}; S.weak = S.weak || []; S.known = S.known || {};
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+  function record(topic, got, out) { var t = S.t[topic] || (S.t[topic] = { r: 0, n: 0 }); t.r += got; t.n += out; save(); }
+  function addWeak(topic, items, source) {
+    items.forEach(function (w) { w = w.trim(); if (w) S.weak.unshift({ t: topic, w: w.slice(0, 220), s: source, d: Date.now() }); });
+    S.weak = S.weak.slice(0, 30); save();
+  }
+
+  // ---------- AI ----------
+  function aiStream(body, onText) {
+    return fetch(API + "/api/public/study-ai", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })
+      .then(function (r) {
+        if (!r.ok || !r.body) return r.json().catch(function () { return {}; }).then(function (j) { throw new Error(j.error || "The AI helper isn't reachable right now."); });
+        var reader = r.body.getReader(), dec = new TextDecoder(), text = "";
+        function pump() {
+          return reader.read().then(function (c) {
+            if (c.done) {
+              var i = text.indexOf("[[ERROR]]");
+              if (i >= 0) { var msg = text.slice(i + 9).trim(); onText(text.slice(0, i)); throw new Error(msg); }
+              return text;
+            }
+            text += dec.decode(c.value, { stream: true });
+            onText(text.split("[[ERROR]]")[0]);
+            return pump();
+          });
+        }
+        return pump();
+      });
+  }
+
+  // Offline marking: checks the key ideas in the marking guide.
+  function offlineMark(item, answer) {
+    var a = answer.toLowerCase(), hit = [], miss = [];
+    item.kw.forEach(function (g) { (g.some(function (k) { return a.indexOf(k) >= 0; }) ? hit : miss).push(g[0]); });
+    var score = item.kw.length > item.marks ? Math.round((hit.length / item.kw.length) * item.marks) : Math.min(item.marks, hit.length);
+    if (answer.trim().split(/\s+/).length < 4) score = Math.min(score, 1);
+    return { score: score, hit: hit, miss: miss };
+  }
+
+  // ---------- nav ----------
+  var PAGES = [
+    ["home", "Dashboard", "◉"], ["notes", "Study notes", "▤"], ["diagrams", "Interactive diagrams", "◐"],
+    ["mcq", "Multiple choice", "☑"], ["short", "Short answer", "✎"], ["mock", "Timed mock", "◷"], ["long", "Long response", "¶"],
+    ["cards", "Flashcards", "▭"], ["tutor", "AI tutor", "✦"], ["grades", "Grade guide", "A"]
+  ];
+  var nav = document.getElementById("nav");
+  nav.innerHTML = PAGES.map(function (p) { return '<button data-p="' + p[0] + '"><span class="ico">' + p[2] + "</span>" + p[1] + "</button>"; }).join("");
+  nav.addEventListener("click", function (e) { var b = e.target.closest("button"); if (b) location.hash = "#/" + b.dataset.p; });
+
+  var days = Math.ceil((EXAM - new Date()) / 86400000);
+  document.getElementById("countdown").innerHTML = days > 0 ? "<b>" + days + " days</b>until the yearly test" : "<b>Exam day</b>Good luck!";
+
+  var cleanup = null;
+  function route() {
+    if (cleanup) { cleanup(); cleanup = null; }
+    var parts = (location.hash.replace(/^#\/?/, "") || "home").split("/");
+    var page = parts[0];
+    if (!R[page]) page = "home";
+    $$("#nav button").forEach(function (b) { b.setAttribute("aria-current", b.dataset.p === page ? "true" : "false"); });
+    main.innerHTML = "";
+    R[page](parts.slice(1));
+    main.focus({ preventScroll: true });
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", route);
+
+  var R = {};
+
+  // ---------- DASHBOARD ----------
+  R.home = function () {
+    var mcqDone = Object.keys(S.mcq).length, saDone = Object.keys(S.sa).length, known = Object.keys(S.known).length;
+    var rows = Object.keys(T).map(function (k) {
+      var t = S.t[k], pct = t && t.n ? Math.round((t.r / t.n) * 100) : null;
+      var cls = pct === null ? "" : pct < 50 ? "low" : pct < 75 ? "mid" : "";
+      return { k: k, pct: pct, html: '<div class="topic-row"><span>' + tag(k) + '</span><div class="bar ' + cls + '"><i style="width:' + (pct || 0) + '%"></i></div><b>' + (pct === null ? "–" : pct + "%") + "</b></div>" };
+    });
+    var tried = rows.filter(function (r) { return r.pct !== null; }).sort(function (a, b) { return a.pct - b.pct; });
+    var focus = tried.length ? tried.slice(0, 2).filter(function (r) { return r.pct < 80; }) : [];
+    var weakHtml = S.weak.length
+      ? '<ul class="clean">' + S.weak.slice(0, 6).map(function (w) { return "<li>" + tag(w.t) + " " + esc(w.w) + "</li>"; }).join("") + "</ul>"
+      : '<p class="muted">Mark a short answer or long response and the gaps the marker finds will show up here.</p>';
+
+    main.innerHTML =
+      '<div class="hero"><div class="card big"><p class="eyebrow" style="color:#bfe0cb">Penrith Selective · Year 7 Science</p><h1>' + (days > 0 ? days + " days to go." : "It's exam day.") + "</h1><p>" + esc(N.exam) + '</p><div class="row"><button class="btn ghost" style="background:#fff" data-go="mock">Sit a timed mock</button><button class="btn ghost" style="background:transparent;color:#fff;border-color:#ffffff66" data-go="mcq/exam">Quick 20 MCQs</button></div></div>' +
+      '<div class="card"><p class="eyebrow">Your progress</p><div class="grid g3" style="grid-template-columns:repeat(3,1fr)">' +
+      '<div><div class="stat">' + mcqDone + '</div><span class="muted">of 100 MCQs</span></div><div><div class="stat">' + saDone + '</div><span class="muted">of 50 short answers</span></div><div><div class="stat">' + known + '</div><span class="muted">of ' + N.cards.length + " cards known</span></div></div>" +
+      '<p class="muted" style="margin-top:14px">Progress is saved in this browser.</p></div></div>' +
+      '<div class="grid g2"><div class="card"><h2>Accuracy by topic</h2>' + rows.map(function (r) { return r.html; }).join("") +
+      (focus.length ? '<p class="tip" style="margin-top:12px">Focus next on <b>' + focus.map(function (f) { return T[f.k]; }).join("</b> and <b>") + "</b>.</p>" : "") +
+      '</div><div class="card"><h2>Your weak spots</h2>' + weakHtml + "</div></div>" +
+      '<h2 style="margin-top:28px">Jump in</h2><div class="grid g3">' +
+      [["notes", "Read the notes", "Six topics, matched to syllabus dot points."], ["diagrams", "Play with diagrams", "Cells, particles and the heating curve."], ["short", "Get marked", "Write answers; get a mark and feedback."], ["cards", "Flashcards", N.cards.length + " key terms to lock in."], ["tutor", "Ask the tutor", "Stuck on something? Just ask."], ["long", "Long responses", "Plan, write, and compare to an A answer."]]
+        .map(function (q) { return '<button class="card quick" data-go="' + q[0] + '"><b>' + q[1] + '</b><span class="muted">' + q[2] + "</span></button>"; }).join("") + "</div>" +
+      '<p class="muted" style="margin-top:24px">Not in this test: separation techniques. <button class="btn ghost sm" id="reset">Reset my progress</button></p>';
+    main.addEventListener("click", goHandler);
+    $("#reset").onclick = function () { if (confirm("Clear all saved progress?")) { localStorage.removeItem(KEY); location.reload(); } };
+  };
+  function goHandler(e) { var b = e.target.closest("[data-go]"); if (b) location.hash = "#/" + b.dataset.go; }
+  main.addEventListener("click", goHandler);
+
+  // ---------- NOTES ----------
+  R.notes = function () {
+    main.innerHTML = '<p class="eyebrow">Study notes</p><h1>Everything on the test</h1><p class="lede">Each section lists the syllabus point it covers. Open one, read it, then test yourself.</p>' +
+      '<div class="row" style="margin:16px 0"><input class="search" id="ns" placeholder="Search the notes… e.g. turgor" /></div><div id="nl"></div>';
+    function draw(term) {
+      term = (term || "").toLowerCase();
+      $("#nl").innerHTML = N.notes.map(function (n) {
+        var body = n.html.join("");
+        if (term && body.toLowerCase().indexOf(term) < 0 && n.title.toLowerCase().indexOf(term) < 0) return "";
+        if (term) body = body.replace(new RegExp("(>[^<]*?)(" + term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gi"), "$1<mark>$2</mark>");
+        return '<details class="note"' + (term ? " open" : "") + '><summary><div><h2>' + esc(n.title) + "</h2></div></summary><div class=\"body\"><p class=\"syl\">" + esc(n.syl) + "</p>" + body +
+          '<div class="row" style="margin-top:14px"><button class="btn sm" data-go="mcq/' + n.topic + '">Practise ' + esc(T[n.topic]) + ' MCQs</button><button class="btn ghost sm" data-go="cards">Flashcards</button></div></div></details>';
+      }).join("") || '<p class="muted">Nothing matches that search.</p>';
+    }
+    draw();
+    $("#ns").addEventListener("input", function (e) { draw(e.target.value); });
+  };
+
+  // ---------- DIAGRAMS ----------
+  var ORG = {
+    nucleus: ["Nucleus", "The control centre", "Holds the DNA (genetic blueprint) and coordinates all of the cell's activities.", "Plant & animal"],
+    membrane: ["Cell membrane", "The gatekeeper", "A flexible, selectively permeable barrier that controls what enters and exits the cell.", "Plant & animal"],
+    cytoplasm: ["Cytoplasm", "The factory floor", "Jelly-like fluid where chemical reactions happen. It holds the organelles in place.", "Plant & animal"],
+    mito: ["Mitochondria", "The powerhouses", "Carry out cellular respiration: glucose is turned into usable energy (ATP) for growth and repair.", "Plant & animal"],
+    chloro: ["Chloroplasts", "The solar panels", "Contain chlorophyll. Capture light to turn carbon dioxide + water into glucose + oxygen (photosynthesis).", "Plant only"],
+    wall: ["Cell wall", "The armour", "Rigid outer layer that gives support and strength and stops the cell bursting when full of water.", "Plant only"],
+    vacuole: ["Large central vacuole", "The water balloon", "Stores water. When full it pushes on the cell wall, creating turgor pressure that keeps the plant upright.", "Plant only (animals have small, temporary ones)"],
+    svac: ["Small vacuole", "Temporary storage", "Animal cells only have small, temporary vacuoles — not one large permanent one.", "Animal"]
+  };
+  function mitoShape(x, y, r) { return '<g class="org" data-o="mito" transform="translate(' + x + " " + y + ") rotate(" + r + ')"><rect x="-22" y="-10" width="44" height="20" rx="10" fill="#e9a267" stroke="#a5602d" stroke-width="2"/><path d="M-14 0 q4 -7 8 0 t8 0 t8 0" fill="none" stroke="#a5602d" stroke-width="1.6"/></g>'; }
+  function chloroShape(x, y, r) { return '<g class="org" data-o="chloro" transform="translate(' + x + " " + y + ") rotate(" + r + ')"><ellipse rx="20" ry="11" fill="#5f9e55" stroke="#2f6b2a" stroke-width="2"/><path d="M-10 -4 h20 M-12 1 h24 M-9 6 h18" stroke="#2f6b2a" stroke-width="1.4"/></g>'; }
+  function plantSVG() {
+    return '<svg viewBox="0 0 520 380" role="img" aria-label="Plant cell diagram">' +
+      '<g class="org" data-o="wall"><rect x="20" y="20" width="480" height="340" rx="14" fill="#cfe3c2" stroke="#4f7a3a" stroke-width="10"/></g>' +
+      '<g class="org" data-o="membrane"><rect x="32" y="32" width="456" height="316" rx="8" fill="none" stroke="#2d5a87" stroke-width="3" stroke-dasharray="1 0"/></g>' +
+      '<g class="org" data-o="cytoplasm"><rect x="36" y="36" width="448" height="308" rx="6" fill="#f2f6e6"/></g>' +
+      '<g class="org" data-o="vacuole"><path d="M150 110 C170 70 360 70 380 120 C405 180 390 260 340 280 C270 305 180 295 150 250 C125 210 130 150 150 110Z" fill="#cfe4f2" stroke="#4a7ea6" stroke-width="2.5"/></g>' +
+      '<g class="org" data-o="nucleus"><circle cx="420" cy="90" r="38" fill="#b7a0d1" stroke="#5e4685" stroke-width="2.5"/><circle cx="428" cy="84" r="12" fill="#7d62a6"/></g>' +
+      chloroShape(80, 80, -20) + chloroShape(85, 300, 25) + chloroShape(250, 320, 0) + chloroShape(445, 290, -30) + chloroShape(445, 200, 80) + chloroShape(80, 200, 90) +
+      mitoShape(110, 140, 30) + mitoShape(420, 150, -20) + mitoShape(170, 320, 10) +
+      "</svg>";
+  }
+  function animalSVG() {
+    return '<svg viewBox="0 0 520 380" role="img" aria-label="Animal cell diagram">' +
+      '<g class="org" data-o="membrane"><path d="M90 90 C150 20 380 25 440 100 C500 170 480 290 400 330 C310 375 170 360 100 310 C35 260 40 150 90 90Z" fill="none" stroke="#2d5a87" stroke-width="4"/></g>' +
+      '<g class="org" data-o="cytoplasm"><path d="M94 94 C152 26 378 31 436 103 C494 172 474 287 397 326 C310 369 172 354 104 306 C42 258 46 152 94 94Z" fill="#fbeee4"/></g>' +
+      '<g class="org" data-o="nucleus"><circle cx="265" cy="190" r="55" fill="#b7a0d1" stroke="#5e4685" stroke-width="2.5"/><circle cx="278" cy="180" r="17" fill="#7d62a6"/></g>' +
+      mitoShape(140, 150, 25) + mitoShape(380, 130, -15) + mitoShape(170, 280, -30) + mitoShape(380, 270, 40) +
+      '<g class="org" data-o="svac"><circle cx="330" cy="300" r="13" fill="#cfe4f2" stroke="#4a7ea6" stroke-width="2"/><circle cx="130" cy="215" r="10" fill="#cfe4f2" stroke="#4a7ea6" stroke-width="2"/></g>' +
+      "</svg>";
+  }
+
+  R.diagrams = function () {
+    main.innerHTML = '<p class="eyebrow">Interactive diagrams</p><h1>See it, click it, get it</h1>' +
+      '<div class="row" style="margin:14px 0 20px" id="dtabs"><button class="chip" data-d="cell">Cell explorer</button><button class="chip" data-d="particles">Particles & heating curve</button><button class="chip" data-d="ladder">Cells → organisms</button><button class="chip" data-d="diffusion">Diffusion</button></div><div id="dv"></div>';
+    var which = "cell";
+    function show(d) {
+      which = d;
+      if (cleanup) { cleanup(); cleanup = null; }
+      $$("#dtabs .chip").forEach(function (c) { c.setAttribute("aria-pressed", c.dataset.d === d ? "true" : "false"); });
+      ({ cell: cellView, particles: particleView, ladder: ladderView, diffusion: diffusionView })[d]();
+    }
+    $("#dtabs").onclick = function (e) { var b = e.target.closest(".chip"); if (b) show(b.dataset.d); };
+    show(which);
+  };
+
+  function cellView() {
+    var dv = $("#dv"), kind = "plant", game = null;
+    dv.innerHTML = '<div class="diagram-wrap"><div class="card diagram"><div class="row spread" style="margin-bottom:10px"><div class="row"><button class="chip" data-k="plant">Plant cell</button><button class="chip" data-k="animal">Animal cell</button></div><button class="btn sm green" id="game">Find the organelle</button></div><div id="svgbox"></div><p class="callout">Click any part of the cell.</p></div><div class="card info" id="info"></div></div>';
+    function intro() { $("#info").innerHTML = "<h3>" + (kind === "plant" ? "Plant cell" : "Animal cell") + "</h3><p>" + (kind === "plant" ? "Has everything an animal cell has, <b>plus</b> a cell wall, chloroplasts and a large central vacuole." : "Has a nucleus, membrane, cytoplasm and mitochondria — but <b>no</b> cell wall, chloroplasts or large vacuole.") + '</p><p class="muted">Tap an organelle to learn what it does, or start the "Find the organelle" game.</p>'; }
+    function draw() {
+      $("#svgbox").innerHTML = kind === "plant" ? plantSVG() : animalSVG();
+      $$("[data-k]", dv).forEach(function (c) { c.setAttribute("aria-pressed", c.dataset.k === kind ? "true" : "false"); });
+      if (!game) intro(); else ask();
+    }
+    function pool() { return kind === "plant" ? ["nucleus", "membrane", "cytoplasm", "mito", "chloro", "wall", "vacuole"] : ["nucleus", "membrane", "cytoplasm", "mito", "svac"]; }
+    function ask() {
+      var p = pool().filter(function (o) { return o !== game.last; });
+      game.target = p[Math.floor(Math.random() * p.length)];
+      game.last = game.target;
+      $("#info").innerHTML = '<p class="eyebrow">Find the organelle · score ' + game.score + "/" + game.tries + "</p><h3>Click: " + ORG[game.target][1].replace(/^The /, "the ") + '</h3><p class="muted">Hint: ' + esc(ORG[game.target][2].split(".")[0]) + '.</p><button class="btn ghost sm" id="stop">Stop game</button>';
+      $("#stop").onclick = function () { game = null; $("#game").textContent = "Find the organelle"; intro(); };
+    }
+    dv.addEventListener("click", function (e) {
+      var k = e.target.closest("[data-k]"); if (k) { kind = k.dataset.k; draw(); return; }
+      if (e.target.closest("#game")) { game = { score: 0, tries: 0 }; e.target.textContent = "Restart game"; ask(); return; }
+      var g = e.target.closest(".org"); if (!g) return;
+      var o = g.dataset.o, d = ORG[o];
+      $$(".org", dv).forEach(function (x) { x.classList.toggle("dim", x.dataset.o !== o); });
+      setTimeout(function () { $$(".org", dv).forEach(function (x) { x.classList.remove("dim"); }); }, 1400);
+      if (game) {
+        game.tries++;
+        var ok = o === game.target; if (ok) game.score++;
+        record("C", ok ? 1 : 0, 1);
+        $("#info").innerHTML = '<p class="eyebrow">' + (ok ? "Correct!" : "Not quite") + "</p><h3>" + (ok ? "Yes — that's the " : "That's the ") + esc(d[0].toLowerCase()) + "</h3><p>" + esc(d[2]) + "</p>" + (ok ? "" : "<p>You were looking for the <b>" + esc(ORG[game.target][0].toLowerCase()) + "</b>.</p>") + '<button class="btn sm" id="next">Next</button>';
+        $("#next").onclick = ask;
+        return;
+      }
+      $("#info").innerHTML = '<p class="eyebrow">' + esc(d[3]) + "</p><h3>" + esc(d[0]) + '</h3><p><i>' + esc(d[1]) + "</i></p><p>" + esc(d[2]) + "</p>";
+    });
+    draw();
+  }
+
+  // particles + heating curve
+  function tempFromEnergy(E) {
+    if (E <= 15) return { T: -20 + (E / 15) * 20, st: "solid", f: 0 };
+    if (E <= 35) return { T: 0, st: "melting", f: (E - 15) / 20 };
+    if (E <= 60) return { T: ((E - 35) / 25) * 100, st: "liquid", f: 0 };
+    if (E <= 90) return { T: 100, st: "boiling", f: (E - 60) / 30 };
+    return { T: 100 + ((E - 90) / 10) * 30, st: "gas", f: 0 };
+  }
+  function curvePts() { var p = []; for (var e = 0; e <= 100; e += 1) { var t = tempFromEnergy(e).T; p.push([40 + e * 2.6, 190 - ((t + 20) / 150) * 170]); } return p; }
+  function particleView() {
+    var dv = $("#dv");
+    var pts = curvePts().map(function (p) { return p[0].toFixed(1) + "," + p[1].toFixed(1); }).join(" ");
+    dv.innerHTML = '<div class="diagram-wrap"><div class="card"><canvas id="pc" width="560" height="340"></canvas>' +
+      '<div style="margin-top:12px"><label class="muted" for="en">Heat added over time →</label><input type="range" id="en" min="0" max="100" value="5" /></div>' +
+      '<div class="row" style="margin-top:8px"><button class="btn sm green" id="play">▶ Heat it up</button><button class="btn ghost sm" id="rst">Reset to ice</button></div></div>' +
+      '<div class="card"><div class="row spread"><span id="pill" class="state-pill"></span><b id="tval" style="font:700 1.6rem var(--serif)"></b></div>' +
+      '<svg viewBox="0 0 320 220" style="width:100%;margin:10px 0"><line x1="40" y1="10" x2="40" y2="190" stroke="#1c2529"/><line x1="40" y1="190" x2="310" y2="190" stroke="#1c2529"/>' +
+      '<text x="6" y="16" font-size="10" fill="#7d878c">°C</text><text x="270" y="206" font-size="10" fill="#7d878c">time</text>' +
+      '<text x="12" y="' + (190 - (20 / 150) * 170 + 3) + '" font-size="10">0</text><text x="6" y="' + (190 - (120 / 150) * 170 + 3) + '" font-size="10">100</text>' +
+      '<line x1="40" x2="310" y1="' + (190 - (20 / 150) * 170) + '" y2="' + (190 - (20 / 150) * 170) + '" stroke="#dedad0" stroke-dasharray="3 3"/><line x1="40" x2="310" y1="' + (190 - (120 / 150) * 170) + '" y2="' + (190 - (120 / 150) * 170) + '" stroke="#dedad0" stroke-dasharray="3 3"/>' +
+      '<polyline points="' + pts + '" fill="none" stroke="#2c6e49" stroke-width="3"/><circle id="dot" r="7" fill="#e8b53a" stroke="#1c2529" stroke-width="2"/></svg>' +
+      '<p id="explain"></p></div></div>';
+    var cv = $("#pc"), ctx = cv.getContext("2d"), W = cv.width, H = cv.height, n = 42, P = [];
+    var cols = 7, rows = 6, gap = 26, ox = W / 2 - ((cols - 1) * gap) / 2, oy = H - 30 - (rows - 1) * gap;
+    for (var i = 0; i < n; i++) { var hx = ox + (i % cols) * gap, hy = oy + Math.floor(i / cols) * gap; P.push({ hx: hx, hy: hy, x: hx, y: hy, vx: 0, vy: 0, m: "solid", o: Math.random() }); }
+    var order = shuffle(P.map(function (_, i) { return i; }));
+    var E = 5, playing = false, raf;
+    function modeFor(idx, s) {
+      var rank = order.indexOf(idx) / n;
+      if (s.st === "solid") return "solid";
+      if (s.st === "melting") return rank < s.f ? "liquid" : "solid";
+      if (s.st === "liquid") return "liquid";
+      if (s.st === "boiling") return rank < s.f ? "gas" : "liquid";
+      return "gas";
+    }
+    var TEXT = {
+      solid: "<b>Solid (ice).</b> Particles are locked in a fixed lattice by very strong attractive forces. Heat makes them <b>vibrate faster</b> in place, so the temperature rises.",
+      melting: "<b>Plateau 1 — melting at 0 °C.</b> Heat is still going in, but the temperature stays flat: the energy is used to <b>overcome the attractive forces</b> holding the lattice, not to speed particles up.",
+      liquid: "<b>Liquid (water).</b> Forces are weaker. Particles are still close but <b>slide past each other</b>. Extra heat becomes kinetic energy, so temperature rises.",
+      boiling: "<b>Plateau 2 — boiling at 100 °C.</b> Energy breaks the remaining attractive forces so particles escape as gas. This plateau is longer — it takes more energy.",
+      gas: "<b>Gas (steam).</b> Forces are negligible. Particles move <b>fast and randomly</b> with lots of empty space. Notice: the particles never get bigger!"
+    };
+    var lastSt = "";
+    function setE(v) {
+      E = v; $("#en").value = v;
+      var s = tempFromEnergy(E);
+      $("#tval").textContent = Math.round(s.T) + " °C";
+      var pill = $("#pill"); pill.textContent = { solid: "Solid", melting: "Melting", liquid: "Liquid", boiling: "Boiling", gas: "Gas" }[s.st];
+      pill.className = "state-pill state-" + (s.st === "melting" || s.st === "boiling" ? "change" : s.st);
+      var c = curvePts()[Math.round(E)]; $("#dot").setAttribute("cx", c[0]); $("#dot").setAttribute("cy", c[1]);
+      if (s.st !== lastSt) { $("#explain").innerHTML = TEXT[s.st]; lastSt = s.st; }
+      P.forEach(function (p, i) {
+        var m = modeFor(i, s);
+        if (m !== p.m) { if (m === "solid") { p.x = p.hx; p.y = p.hy; } else { var sp = m === "gas" ? 4 : 1.2; var a = Math.random() * 6.28; p.vx = Math.cos(a) * sp; p.vy = Math.sin(a) * sp - (m === "gas" ? 2 : 0); } p.m = m; }
+      });
+    }
+    function step() {
+      var s = tempFromEnergy(E), heat = (s.T + 25) / 150;
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = "#e9e5da"; ctx.fillRect(0, H - 8, W, 8);
+      var liquidTop = H * 0.42;
+      P.forEach(function (p) {
+        var x, y;
+        if (p.m === "solid") { var amp = 0.6 + heat * 4; x = p.hx + (Math.random() - 0.5) * amp; y = p.hy + (Math.random() - 0.5) * amp; }
+        else {
+          var maxV = p.m === "gas" ? 3 + heat * 3 : 0.8 + heat * 1.6;
+          p.vx += (Math.random() - 0.5) * 0.5; p.vy += (Math.random() - 0.5) * 0.5 + (p.m === "liquid" ? 0.05 : 0);
+          var v = Math.hypot(p.vx, p.vy); if (v > maxV) { p.vx *= maxV / v; p.vy *= maxV / v; }
+          p.x += p.vx; p.y += p.vy;
+          var top = p.m === "liquid" ? liquidTop : 12;
+          if (p.x < 12) { p.x = 12; p.vx = Math.abs(p.vx); } if (p.x > W - 12) { p.x = W - 12; p.vx = -Math.abs(p.vx); }
+          if (p.y < top) { p.y = top; p.vy = Math.abs(p.vy); } if (p.y > H - 20) { p.y = H - 20; p.vy = -Math.abs(p.vy); }
+          x = p.x; y = p.y;
+        }
+        ctx.beginPath(); ctx.arc(x, y, 10, 0, 6.283);
+        ctx.fillStyle = p.m === "solid" ? "#2f5d86" : p.m === "liquid" ? "#2c6e49" : "#b8462f"; ctx.fill();
+        ctx.lineWidth = 1.5; ctx.strokeStyle = "rgba(0,0,0,.25)"; ctx.stroke();
+      });
+      if (playing) { if (E < 100) setE(Math.min(100, E + 0.12)); else { playing = false; $("#play").textContent = "▶ Heat it up"; } }
+      raf = requestAnimationFrame(step);
+    }
+    $("#en").oninput = function (e) { playing = false; $("#play").textContent = "▶ Heat it up"; setE(+e.target.value); };
+    $("#play").onclick = function () { playing = !playing; if (playing && E >= 100) setE(0); this.textContent = playing ? "❚❚ Pause" : "▶ Heat it up"; };
+    $("#rst").onclick = function () { playing = false; $("#play").textContent = "▶ Heat it up"; setE(0); };
+    setE(5); step();
+    cleanup = function () { cancelAnimationFrame(raf); };
+  }
+
+  function ladderView() {
+    var dv = $("#dv"), kind = "plant", sel = 0;
+    var L = {
+      plant: [["Specialised cell", "Root hair cell", "A long, thin projection gives a huge surface area to absorb water by osmosis."], ["Tissue", "Xylem (vascular) tissue", "A group of similar cells that carries water up the plant."], ["Organ", "Root", "Two or more different tissues (root hair tissue, xylem…) working together."], ["Organ system", "Root system", "All the roots working together to anchor the plant and take in water and minerals."], ["Organism", "The whole plant", "All the systems together keep the plant alive."]],
+      animal: [["Specialised cell", "Muscle cell", "Packed with mitochondria to release lots of energy for contraction."], ["Tissue", "Muscle tissue", "Many similar muscle cells contracting together."], ["Organ", "Heart", "Muscle, nerve and connective tissue cooperating to pump blood."], ["Organ system", "Cardiovascular system", "Heart + blood vessels moving blood around the body."], ["Organism", "Human", "All organ systems working together."]]
+    };
+    function draw() {
+      var l = L[kind];
+      dv.innerHTML = '<div class="card"><div class="row" style="margin-bottom:14px"><button class="chip" data-k="plant" aria-pressed="' + (kind === "plant") + '">Plant</button><button class="chip" data-k="animal" aria-pressed="' + (kind === "animal") + '">Animal</button><span class="muted">Simplest → most complex</span></div>' +
+        '<div class="ladder">' + l.map(function (s, i) { return '<button data-i="' + i + '" aria-pressed="' + (i === sel) + '"><span class="size" style="font-size:' + (0.8 + i * 0.35) + 'rem">●</span>' + s[0] + "</button>"; }).join('<span style="align-self:center;color:#7d878c">→</span>') + "</div>" +
+        '<div style="margin-top:18px"><p class="eyebrow">' + esc(l[sel][0]) + "</p><h3 style=\"margin-top:0\">" + esc(l[sel][1]) + "</h3><p>" + esc(l[sel][2]) + '</p></div><p class="tip">Exam tip: when you <i>represent</i> organisation, draw the arrow chain and give a named example at every level.</p></div>';
+    }
+    dv.onclick = function (e) { var k = e.target.closest("[data-k]"); if (k) { kind = k.dataset.k; draw(); } var b = e.target.closest("[data-i]"); if (b) { sel = +b.dataset.i; draw(); } };
+    draw();
+  }
+
+  function diffusionView() {
+    var dv = $("#dv");
+    dv.innerHTML = '<div class="diagram-wrap"><div class="card"><canvas id="dc" width="560" height="300"></canvas><div class="row" style="margin-top:10px"><button class="btn sm green" id="go">Remove the barrier</button><button class="btn ghost sm" id="again">Reset</button><label class="muted row">State: <select id="dst"><option value="gas">Gas (fast)</option><option value="liquid">Liquid (slower)</option></select></label></div></div>' +
+      '<div class="card"><h3 style="margin-top:0">Diffusion</h3><p>The net movement of particles from <b>high</b> concentration to <b>low</b> concentration, caused by their random motion.</p><p>It keeps going until the particles are <b>evenly mixed</b>. They are still moving after that — there is just no <i>net</i> movement.</p><p class="muted" id="count"></p></div></div>';
+    var cv = $("#dc"), ctx = cv.getContext("2d"), W = cv.width, H = cv.height, P = [], open = false, raf;
+    function reset() { open = false; P = []; for (var i = 0; i < 60; i++) P.push({ x: 15 + Math.random() * (W / 2 - 30), y: 15 + Math.random() * (H - 30), vx: Math.random() - 0.5, vy: Math.random() - 0.5 }); }
+    function step() {
+      var sp = $("#dst").value === "gas" ? 3 : 1;
+      ctx.clearRect(0, 0, W, H);
+      var right = 0;
+      P.forEach(function (p) {
+        p.vx += (Math.random() - 0.5) * 0.6; p.vy += (Math.random() - 0.5) * 0.6;
+        var v = Math.hypot(p.vx, p.vy); if (v > sp) { p.vx *= sp / v; p.vy *= sp / v; }
+        p.x += p.vx; p.y += p.vy;
+        var maxX = open ? W - 8 : W / 2 - 8;
+        if (p.x < 8) { p.x = 8; p.vx *= -1; } if (p.x > maxX) { p.x = maxX; p.vx = -Math.abs(p.vx); }
+        if (p.y < 8) { p.y = 8; p.vy *= -1; } if (p.y > H - 8) { p.y = H - 8; p.vy *= -1; }
+        if (p.x > W / 2) right++;
+        ctx.beginPath(); ctx.arc(p.x, p.y, 6, 0, 6.283); ctx.fillStyle = "#b8462f"; ctx.fill();
+      });
+      if (!open) { ctx.fillStyle = "#1c2529"; ctx.fillRect(W / 2 - 2, 0, 4, H); }
+      else { ctx.setLineDash([4, 6]); ctx.strokeStyle = "#7d878c"; ctx.beginPath(); ctx.moveTo(W / 2, 0); ctx.lineTo(W / 2, H); ctx.stroke(); ctx.setLineDash([]); }
+      $("#count").textContent = "Left side: " + (60 - right) + " particles · Right side: " + right + " particles";
+      raf = requestAnimationFrame(step);
+    }
+    $("#go").onclick = function () { open = true; };
+    $("#again").onclick = reset;
+    reset(); step();
+    cleanup = function () { cancelAnimationFrame(raf); };
+  }
+
+  // ---------- MCQ ----------
+  R.mcq = function (args) {
+    var mode = args[0] || "";
+    if (!mode) {
+      main.innerHTML = '<p class="eyebrow">Multiple choice · 100 questions</p><h1>Pick a set</h1><p class="lede">Every answer comes with a short explanation. Your results feed the accuracy bars on the dashboard.</p>' +
+        '<div class="grid g3" style="margin-top:18px">' +
+        '<button class="card quick" data-go="mcq/exam"><b>Exam mix</b><span class="muted">20 random questions from every topic</span></button>' +
+        '<button class="card quick" data-go="mcq/weak"><b>My weakest topic</b><span class="muted">15 questions from where you score lowest</span></button>' +
+        '<button class="card quick" data-go="mcq/all"><b>All 100</b><span class="muted">The full bank, in order</span></button>' +
+        Object.keys(T).map(function (k) { var c = Q.mcq.filter(function (q) { return q.topic === k; }).length; return '<button class="card quick" data-go="mcq/' + k + '"><b>' + esc(T[k]) + '</b><span class="muted">' + c + " questions</span></button>"; }).join("") + "</div>";
+      return;
+    }
+    var set;
+    if (mode === "exam") set = shuffle(Q.mcq).slice(0, 20);
+    else if (mode === "all") set = Q.mcq.slice();
+    else if (mode === "weak") {
+      var worst = Object.keys(T).map(function (k) { var t = S.t[k]; return [k, t && t.n ? t.r / t.n : 0.5]; }).sort(function (a, b) { return a[1] - b[1]; })[0][0];
+      set = shuffle(Q.mcq.filter(function (q) { return q.topic === worst; })).slice(0, 15);
+    } else set = Q.mcq.filter(function (q) { return q.topic === mode; });
+    var idx = 0, score = 0, answered = false;
+    function draw() {
+      if (idx >= set.length) {
+        var pct = Math.round((score / set.length) * 100);
+        main.innerHTML = '<div class="card" style="max-width:640px"><p class="eyebrow">Finished</p><h1>' + score + " / " + set.length + "</h1><p>" + (pct >= 85 ? "Excellent — that's A-range recall." : pct >= 65 ? "Solid. Re-read the explanations for the ones you missed." : "Keep going — open the notes for this topic, then try again.") + '</p><div class="row"><button class="btn" data-go="mcq">Choose another set</button><button class="btn ghost" data-go="short">Try short answers</button></div></div>';
+        return;
+      }
+      var q = set[idx]; answered = false;
+      main.innerHTML = '<div style="max-width:720px"><div class="row spread"><span class="muted">Question ' + (idx + 1) + " of " + set.length + " · Score " + score + "</span>" + tag(q.topic) + '</div><div class="progress-line"><i style="width:' + (idx / set.length) * 100 + '%"></i></div>' +
+        '<div class="card"><p class="q">' + esc(q.q) + '</p><div class="opts">' + q.o.map(function (o, i) { return '<button class="opt" data-i="' + i + '"><span class="l">' + "ABCD"[i] + "</span><span>" + esc(o) + "</span></button>"; }).join("") + '</div><div id="ex"></div></div>' +
+        '<div class="row spread" style="margin-top:14px"><button class="btn ghost sm" data-go="mcq">Exit</button><button class="btn" id="nx" disabled>Next →</button></div></div>';
+      $(".opts").onclick = function (e) {
+        var b = e.target.closest(".opt"); if (!b || answered) return; answered = true;
+        var i = +b.dataset.i, ok = i === q.a; if (ok) score++;
+        $$(".opt").forEach(function (x, j) { x.disabled = true; if (j === q.a) x.classList.add("right"); else if (j === i) x.classList.add("wrong"); });
+        $("#ex").innerHTML = '<div class="explain"><b>' + (ok ? "Correct. " : "Not quite. ") + "</b>" + esc(q.e) + "</div>";
+        S.mcq[q.id] = ok ? 1 : 0; record(q.topic, ok ? 1 : 0, 1);
+        $("#nx").disabled = false; $("#nx").focus();
+      };
+      $("#nx").onclick = function () { idx++; draw(); };
+    }
+    draw();
+  };
+
+  // ---------- marking UI (short + long) ----------
+  function markBox(opts) {
+    // opts: { topic, question, marks, guide, kwItem, onScore, key, store }
+    var wrap = document.createElement("div");
+    wrap.innerHTML = '<textarea id="ans" placeholder="Write your answer like you would in the exam. Use scientific words and link ideas with because / therefore."></textarea>' +
+      '<div class="row spread" style="margin-top:10px"><span class="muted" id="wc">0 words</span><div class="row"><button class="btn ghost sm" id="showm">Show model answer</button><button class="btn green" id="mark">Mark my answer</button></div></div><div id="fb"></div>';
+    var ta = $("#ans", wrap);
+    ta.value = (opts.store[opts.key] && opts.store[opts.key].ans) || "";
+    ta.addEventListener("input", function () { $("#wc", wrap).textContent = (ta.value.trim() ? ta.value.trim().split(/\s+/).length : 0) + " words"; });
+    $("#showm", wrap).onclick = function () { $("#fb", wrap).insertAdjacentHTML("beforeend", '<div class="model"><b>Model answer:</b> ' + esc(opts.guide) + "</div>"); this.disabled = true; };
+    $("#mark", wrap).onclick = function () {
+      var ans = ta.value.trim(), btn = this;
+      if (ans.length < 3) { ta.focus(); return; }
+      btn.disabled = true; btn.textContent = "Marking…";
+      var fb = $("#fb", wrap);
+      fb.innerHTML = '<div class="feedback" id="live">Reading your answer…</div>';
+      aiStream({ mode: "mark", question: opts.question, marks: opts.marks, guide: opts.guide, answer: ans }, function (t) { $("#live", wrap).textContent = t; })
+        .then(function (text) {
+          var m = text.match(/SCORE:\s*(\d+)\s*\/\s*(\d+)/i), sc = m ? Math.min(+m[1], opts.marks) : 0;
+          var weak = (text.split(/WEAKNESSES:/i)[1] || "").split(/TO GET FULL MARKS:/i)[0].split("\n").map(function (l) { return l.replace(/^[-•\s]+/, ""); }).filter(Boolean);
+          $("#live", wrap).innerHTML = '<span class="score">' + sc + " / " + opts.marks + "</span>\n" + esc(text.replace(/SCORE:.*\n?/i, ""));
+          finish(sc, weak, ans);
+        })
+        .catch(function (err) {
+          if (opts.kwItem) {
+            var r = offlineMark(opts.kwItem, ans);
+            $("#live", wrap).innerHTML = '<span class="score">' + r.score + " / " + opts.marks + '</span>\n<span class="muted">Quick check (AI marker unavailable: ' + esc(err.message) + ")</span>\n\n" +
+              (r.hit.length ? "You included: " + esc(r.hit.join(", ")) + "\n" : "") + (r.miss.length ? "Missing key ideas: " + esc(r.miss.join(", ")) : "All key ideas included!");
+            fb.insertAdjacentHTML("beforeend", '<div class="model"><b>Model answer:</b> ' + esc(opts.guide) + "</div>");
+            finish(r.score, r.miss.map(function (k) { return "Missed key idea “" + k + "” in: " + opts.question.slice(0, 70); }), ans);
+          } else {
+            $("#live", wrap).innerHTML = "<b>The AI marker isn't available right now.</b> " + esc(err.message) + "\n\nCompare your answer with the model answer and the plan instead.";
+            fb.insertAdjacentHTML("beforeend", '<div class="model"><b>Grade A answer:</b> ' + esc(opts.guide) + "</div>");
+            btn.disabled = false; btn.textContent = "Mark my answer";
+          }
+        });
+      function finish(sc, weak, a) {
+        btn.disabled = false; btn.textContent = "Mark again";
+        var prev = opts.store[opts.key];
+        if (prev && typeof prev.score === "number") record(opts.topic, -prev.score, -opts.marks);
+        opts.store[opts.key] = { score: sc, max: opts.marks, ans: a };
+        record(opts.topic, sc, opts.marks);
+        if (weak.length && sc < opts.marks) addWeak(opts.topic, weak.slice(0, 3), "marker");
+        save();
+        if (opts.onScore) opts.onScore(sc);
+      }
+    };
+    return wrap;
+  }
+
+  R.short = function (args) {
+    var id = +args[0];
+    if (!id) {
+      var f = args[1] || "";
+      main.innerHTML = '<p class="eyebrow">Short answer · 50 questions</p><h1>Write it, get it marked</h1><p class="lede">Answer in full sentences. The marker gives you a score, tells you exactly what was missing, and saves your weak spots to the dashboard.</p>' +
+        '<div class="row" style="margin:16px 0" id="flt"><button class="chip" data-f="" aria-pressed="' + (!f) + '">All</button>' + Object.keys(T).map(function (k) { return '<button class="chip" data-f="' + k + '" aria-pressed="' + (f === k) + '">' + esc(T[k]) + "</button>"; }).join("") + "</div>" +
+        '<div class="sa-list">' + Q.sa.filter(function (q) { return !f || q.topic === f; }).map(function (q) { var d = S.sa[q.id]; return '<button class="sa-item" data-go="short/' + q.id + '"><span><span class="muted">' + q.id + ".</span> " + esc(q.q) + ' <span class="muted">(' + q.marks + ")</span></span>" + (d && typeof d.score === "number" ? '<span class="done">' + d.score + "/" + d.max + "</span>" : tag(q.topic)) + "</button>"; }).join("") + "</div>";
+      $("#flt").onclick = function (e) { var b = e.target.closest(".chip"); if (b) location.hash = "#/short/0/" + b.dataset.f; };
+      return;
+    }
+    var q = Q.sa.filter(function (x) { return x.id === id; })[0]; if (!q) { location.hash = "#/short"; return; }
+    main.innerHTML = '<div style="max-width:760px"><div class="row spread"><button class="btn ghost sm" data-go="short">← All questions</button>' + tag(q.topic) + '</div><div class="card" style="margin-top:14px"><p class="eyebrow">Question ' + q.id + " of 50 · " + q.marks + " mark" + (q.marks > 1 ? "s" : "") + '</p><p class="q">' + esc(q.q) + '</p><div id="mb"></div></div>' +
+      '<div class="row spread" style="margin-top:14px">' + (id > 1 ? '<button class="btn ghost sm" data-go="short/' + (id - 1) + '">← Previous</button>' : "<span></span>") + (id < 50 ? '<button class="btn sm" data-go="short/' + (id + 1) + '">Next →</button>' : "") + "</div></div>";
+    $("#mb").appendChild(markBox({ topic: q.topic, question: q.q, marks: q.marks, guide: q.ans, kwItem: q, key: q.id, store: S.sa }));
+  };
+
+  R.long = function (args) {
+    var id = +args[0];
+    if (!id) {
+      main.innerHTML = '<p class="eyebrow">Long response</p><h1>Extended answers</h1><p class="lede">These are the 4–6 mark questions that separate a B from an A. Use the plan, write a linked answer, then get it marked against the grade descriptors.</p>' +
+        '<div class="grid g2" style="margin-top:18px">' + N.long.map(function (l) { var d = S.lr[l.id]; return '<button class="card quick" data-go="long/' + l.id + '">' + tag(l.topic) + '<b style="margin-top:8px">' + esc(l.q) + '</b><span class="muted">' + l.marks + " marks" + (d ? " · last score " + d.score + "/" + d.max : "") + "</span></button>"; }).join("") + "</div>";
+      return;
+    }
+    var l = N.long.filter(function (x) { return x.id === id; })[0]; if (!l) { location.hash = "#/long"; return; }
+    main.innerHTML = '<div style="max-width:820px"><button class="btn ghost sm" data-go="long">← All long responses</button><div class="card" style="margin-top:14px"><div class="row spread"><p class="eyebrow" style="margin:0">' + l.marks + " marks</p>" + tag(l.topic) + '</div><p class="q">' + esc(l.q) + '</p><details><summary class="muted" style="cursor:pointer">Show a plan (SOLO)</summary><ol class="plan">' + l.plan.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("") + '</ol></details><div id="mb" style="margin-top:12px"></div></div></div>';
+    $("#mb").appendChild(markBox({ topic: l.topic, question: l.q, marks: l.marks, guide: l.model, kwItem: null, key: l.id, store: S.lr }));
+    $("#ans").style.minHeight = "240px";
+  };
+
+  // ---------- FLASHCARDS ----------
+  R.cards = function () {
+    var deck = shuffle(N.cards.map(function (c, i) { return i; })), only = false, i = 0;
+    function list() { return only ? deck.filter(function (d) { return !S.known[d]; }) : deck; }
+    function draw() {
+      var L = list();
+      if (!L.length) { main.innerHTML = '<div class="card" style="max-width:560px"><h2>You know every card!</h2><p>Nice. Try the exam mix next.</p><div class="row"><button class="btn" data-go="mcq/exam">Exam mix</button><button class="btn ghost" id="rs">Reset cards</button></div></div>'; $("#rs").onclick = function () { S.known = {}; save(); draw(); }; return; }
+      if (i >= L.length) i = 0;
+      var c = N.cards[L[i]];
+      main.innerHTML = '<p class="eyebrow">Flashcards</p><div class="row spread"><h1 style="margin:0">Tap to flip</h1><label class="row muted"><input type="checkbox" id="only"' + (only ? " checked" : "") + "> Only cards I don't know yet</label></div>" +
+        '<p class="muted">Card ' + (i + 1) + " of " + L.length + " · " + Object.keys(S.known).length + " known</p>" +
+        '<div class="flash" id="fl" tabindex="0" role="button" aria-label="Flip card"><div class="flash-in"><div class="face front"><h2>' + esc(c[0]) + '</h2><small>tap or press space</small></div><div class="face back"><p>' + esc(c[1]) + "</p><small>tap to flip back</small></div></div></div>" +
+        '<div class="row" style="justify-content:center;margin-top:18px"><button class="btn ghost" id="pv">←</button><button class="btn ghost" id="no">Still learning</button><button class="btn green" id="yes">I knew it</button><button class="btn ghost" id="nx">→</button></div>';
+      var fl = $("#fl");
+      fl.onclick = function () { fl.classList.toggle("flipped"); };
+      fl.onkeydown = function (e) { if (e.key === " " || e.key === "Enter") { e.preventDefault(); fl.classList.toggle("flipped"); } };
+      $("#only").onchange = function (e) { only = e.target.checked; i = 0; draw(); };
+      $("#pv").onclick = function () { i = (i - 1 + L.length) % L.length; draw(); };
+      $("#nx").onclick = function () { i++; draw(); };
+      $("#yes").onclick = function () { S.known[L[i]] = 1; save(); if (!only) i++; draw(); };
+      $("#no").onclick = function () { delete S.known[L[i]]; save(); i++; draw(); };
+    }
+    draw();
+  };
+
+  // ---------- TUTOR ----------
+  var chat = [];
+  R.tutor = function () {
+    main.innerHTML = '<p class="eyebrow">AI tutor</p><h1 style="margin-bottom:10px">Ask anything about the test</h1><div class="chat"><div class="suggest" id="sg">' +
+      ["Explain turgor pressure simply", "Why is a heating curve flat when it melts?", "Quiz me on organelles", "How do I write a 6-mark answer?", "Make me a study plan for this week"].map(function (s) { return '<button class="chip">' + esc(s) + "</button>"; }).join("") +
+      '</div><div class="msgs" id="msgs"></div><form class="composer" id="cf"><textarea id="ci" placeholder="Type your question…" rows="1"></textarea><button class="btn" id="cs">Send</button></form></div>';
+    var box = $("#msgs");
+    function render() {
+      box.innerHTML = (chat.length ? "" : '<div class="msg bot">Hi! I know your Year 7 test topics — cells, organisation, classification, particles and heating curves, and working scientifically. What do you want to go over?</div>') +
+        chat.map(function (m) { return '<div class="msg ' + (m.role === "user" ? "user" : "bot") + (m.err ? " err" : "") + '">' + esc(m.content) + "</div>"; }).join("");
+      box.scrollTop = box.scrollHeight;
+    }
+    function send(text) {
+      text = text.trim(); if (!text) return;
+      chat.push({ role: "user", content: text });
+      var bot = { role: "assistant", content: "…" }; chat.push(bot); render();
+      $("#cs").disabled = true;
+      aiStream({ mode: "tutor", messages: chat.slice(0, -1).filter(function (m) { return !m.err; }).map(function (m) { return { role: m.role, content: m.content }; }) }, function (t) { bot.content = t || "…"; render(); })
+        .catch(function (e) { bot.err = true; bot.content = (bot.content !== "…" ? bot.content + "\n\n" : "") + e.message + (location.protocol === "file:" ? "\n(The tutor needs an internet connection.)" : ""); render(); })
+        .then(function () { $("#cs") && ($("#cs").disabled = false); });
+    }
+    $("#cf").onsubmit = function (e) { e.preventDefault(); var v = $("#ci").value; $("#ci").value = ""; send(v); };
+    $("#ci").onkeydown = function (e) { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); $("#cf").requestSubmit(); } };
+    $("#sg").onclick = function (e) { var b = e.target.closest(".chip"); if (b) send(b.textContent); };
+    render();
+  };
+
+  // ---------- TIMED MOCK (8 MCQ + 6 short answer, 30 min) ----------
+  var MOCK_MIN = 30;
+  R.mock = function () {
+    S.mockHist = S.mockHist || [];
+    var M = S.mock;
+    if (cleanupTimer) { clearInterval(cleanupTimer); cleanupTimer = null; }
+    if (!M || M.done) return intro();
+    run();
+
+    function intro() {
+      var last = M && M.done ? M : null;
+      main.innerHTML = '<div class="mock-intro"><p class="eyebrow">Timed mock exam</p><h1>Sit it like the real thing.</h1><p class="lede">8 multiple choice and 6 short answer questions across every topic. ' + MOCK_MIN + ' minutes. Your answers save as you go — close the tab and pick up where you left off.</p>' +
+        '<div class="mock-facts"><div><b>8</b><span>multiple choice</span></div><div><b>6</b><span>short answer</span></div><div><b>' + MOCK_MIN + '</b><span>minutes</span></div><div><b>AI</b><span>marks your writing</span></div></div>' +
+        '<div class="row"><button class="btn" id="go">Start the mock</button>' + (last ? '<button class="btn ghost" id="rv">See last result</button>' : "") + "</div>" +
+        (S.mockHist.length ? '<h2 style="margin-top:28px">Past attempts</h2><div class="sa-list">' + S.mockHist.slice(0, 8).map(function (h) { return '<div class="sa-item"><span>' + new Date(h.d).toLocaleDateString("en-AU", { weekday: "short", day: "numeric", month: "short" }) + '</span><span class="done">' + h.score + "/" + h.max + " · " + Math.round((h.score / h.max) * 100) + "%</span></div>"; }).join("") + "</div>" : "") + "</div>";
+      $("#go").onclick = start;
+      if (last) $("#rv").onclick = function () { results(); };
+    }
+    function start() {
+      var topics = Object.keys(T), mc = [], sa = [];
+      var pool = shuffle(Q.mcq);
+      topics.forEach(function (k) { var q = pool.find(function (x) { return x.topic === k && mc.indexOf(x.id) < 0; }); if (q) mc.push(q.id); });
+      pool.forEach(function (q) { if (mc.length < 8 && mc.indexOf(q.id) < 0) mc.push(q.id); });
+      var sp = shuffle(Q.sa.filter(function (q) { return q.marks >= 2; }));
+      topics.forEach(function (k) { var q = sp.find(function (x) { return x.topic === k && sa.indexOf(x.id) < 0; }); if (q) sa.push(q.id); });
+      sp.forEach(function (q) { if (sa.length < 6 && sa.indexOf(q.id) < 0) sa.push(q.id); });
+      S.mock = M = { mc: mc.slice(0, 8), sa: sa.slice(0, 6), am: {}, as: {}, flag: {}, i: 0, ends: Date.now() + MOCK_MIN * 60000, done: false };
+      save(); run();
+    }
+    function items() { return M.mc.map(function (id) { return { k: "m", q: Q.mcq[id - 1] }; }).concat(M.sa.map(function (id) { return { k: "s", q: Q.sa[id - 1] }; })); }
+    function run() {
+      var list = items();
+      main.innerHTML = '<div class="mock"><div class="mock-hud"><div class="mock-clock" id="clk">--:--</div><div class="mock-grid" id="grid"></div><button class="btn green sm" id="sub">Finish &amp; submit</button><p class="muted small">Saved automatically</p></div><div class="mock-body" id="mb"></div></div>';
+      function grid() {
+        $("#grid").innerHTML = list.map(function (it, n) {
+          var done = it.k === "m" ? M.am[it.q.id] !== undefined : (M.as[it.q.id] || "").trim().length > 2;
+          return '<button data-n="' + n + '" class="' + (n === M.i ? "cur " : "") + (done ? "ok " : "") + (M.flag[n] ? "fl" : "") + '">' + (n + 1) + "</button>";
+        }).join("");
+      }
+      function show() {
+        var it = list[M.i], q = it.q, n = M.i;
+        var head = '<div class="row spread"><span class="eyebrow" style="margin:0">' + (it.k === "m" ? "Section I · Multiple choice" : "Section II · Short answer · " + q.marks + " marks") + " · Q" + (n + 1) + " of " + list.length + "</span>" + tag(q.topic) + "</div>";
+        var body = it.k === "m"
+          ? '<div class="opts">' + q.o.map(function (o, i) { return '<button class="opt' + (M.am[q.id] === i ? " picked" : "") + '" data-i="' + i + '"><span class="l">' + "ABCD"[i] + "</span><span>" + esc(o) + "</span></button>"; }).join("") + "</div>"
+          : '<textarea id="ta" placeholder="Write your answer. Identify → describe → explain (because / therefore).">' + esc(M.as[q.id] || "") + "</textarea>";
+        $("#mb").innerHTML = '<div class="card">' + head + '<p class="q">' + esc(q.q) + "</p>" + body + '</div><div class="row spread" style="margin-top:14px"><button class="btn ghost sm" id="pv"' + (n ? "" : " disabled") + '>← Back</button><button class="btn ghost sm" id="fg">' + (M.flag[n] ? "Unflag" : "⚑ Flag for review") + '</button><button class="btn sm" id="nx">' + (n === list.length - 1 ? "Review" : "Next →") + "</button></div>";
+        if (it.k === "m") $(".opts").onclick = function (e) { var b = e.target.closest(".opt"); if (!b) return; M.am[q.id] = +b.dataset.i; save(); $$(".opt").forEach(function (x) { x.classList.toggle("picked", x === b); }); grid(); };
+        else { var ta = $("#ta"); ta.oninput = function () { M.as[q.id] = ta.value; save(); grid(); }; ta.focus(); }
+        $("#pv").onclick = function () { M.i--; save(); show(); };
+        $("#nx").onclick = function () { if (M.i < list.length - 1) { M.i++; save(); show(); } else submitAsk(); };
+        $("#fg").onclick = function () { M.flag[n] = !M.flag[n]; save(); show(); };
+        grid();
+      }
+      $("#grid").onclick = function (e) { var b = e.target.closest("[data-n]"); if (b) { M.i = +b.dataset.n; save(); show(); } };
+      $("#sub").onclick = submitAsk;
+      function submitAsk() {
+        var left = list.filter(function (it) { return it.k === "m" ? M.am[it.q.id] === undefined : !(M.as[it.q.id] || "").trim(); }).length;
+        if (confirm(left ? left + " question(s) unanswered. Submit anyway?" : "Submit your mock for marking?")) finish();
+      }
+      function tick() {
+        var ms = M.ends - Date.now();
+        if (ms <= 0) { finish(); return; }
+        var m = Math.floor(ms / 60000), s = Math.floor(ms / 1000) % 60, c = $("#clk");
+        if (!c) return;
+        c.textContent = m + ":" + (s < 10 ? "0" : "") + s;
+        c.classList.toggle("warn", ms < 5 * 60000);
+      }
+      cleanupTimer = setInterval(tick, 1000); tick();
+      cleanup = function () { clearInterval(cleanupTimer); cleanupTimer = null; };
+      show();
+    }
+    function finish() {
+      if (cleanupTimer) { clearInterval(cleanupTimer); cleanupTimer = null; }
+      M.done = true; M.res = {}; M.d = Date.now(); save();
+      results(true);
+    }
+    function results(fresh) {
+      var mcScore = M.mc.filter(function (id) { return M.am[id] === Q.mcq[id - 1].a; }).length;
+      var saMax = M.sa.reduce(function (t, id) { return t + Q.sa[id - 1].marks; }, 0), max = M.mc.length + saMax;
+      function total() { return mcScore + M.sa.reduce(function (t, id) { return t + ((M.res[id] && M.res[id].sc) || 0); }, 0); }
+      main.innerHTML = '<div class="mock-result"><p class="eyebrow">Mock result</p><div class="mock-score"><b id="tot">' + total() + '</b><span>/ ' + max + '</span></div><p class="lede" id="rmsg">' + (fresh ? "Marking your short answers…" : "") + '</p>' +
+        '<div class="grid g2"><div class="card"><h2>Section I · ' + mcScore + " / " + M.mc.length + "</h2>" + M.mc.map(function (id, n) { var q = Q.mcq[id - 1], p = M.am[id], ok = p === q.a; return '<div class="mres ' + (ok ? "ok" : "no") + '"><b>Q' + (n + 1) + ".</b> " + esc(q.q) + '<div class="muted small">' + (ok ? "✓ " + esc(q.o[q.a]) : "Your answer: " + (p === undefined ? "—" : esc(q.o[p])) + " · Correct: " + esc(q.o[q.a])) + "</div></div>"; }).join("") + "</div>" +
+        '<div class="card"><h2>Section II</h2><div id="sares">' + M.sa.map(function (id, n) { var q = Q.sa[id - 1]; return '<details class="mres" id="r' + id + '"><summary><b>Q' + (n + 9) + ".</b> " + esc(q.q) + ' <span class="done" id="s' + id + '">' + (M.res[id] ? M.res[id].sc + "/" + q.marks : "…") + '</span></summary><p class="small"><b>Your answer:</b> ' + esc(M.as[id] || "—") + '</p><div class="feedback small" id="f' + id + '">' + esc((M.res[id] && M.res[id].fb) || "Waiting to be marked…") + "</div></details>"; }).join("") + "</div></div></div>" +
+        '<div class="row" style="margin-top:18px"><button class="btn" id="again">New mock</button><button class="btn ghost" data-go="home">Dashboard</button></div></div>';
+      $("#again").onclick = function () { start(); };
+      var todo = M.sa.filter(function (id) { return !M.res[id]; });
+      function next() {
+        if (!todo.length) {
+          $("#rmsg") && ($("#rmsg").textContent = "All marked. Open each short answer to see your feedback.");
+          if (fresh && !M.logged) { M.logged = true; S.mockHist.unshift({ d: M.d, score: total(), max: max }); S.mockHist = S.mockHist.slice(0, 20); M.mc.forEach(function (id) { var q = Q.mcq[id - 1]; record(q.topic, M.am[id] === q.a ? 1 : 0, 1); }); save(); }
+          return;
+        }
+        var id = todo.shift(), q = Q.sa[id - 1], ans = (M.as[id] || "").trim();
+        function done(sc, fb, weak) { M.res[id] = { sc: sc, fb: fb }; record(q.topic, sc, q.marks); if (weak && weak.length && sc < q.marks) addWeak(q.topic, weak.slice(0, 2), "mock"); save(); var e = $("#s" + id); if (e) { e.textContent = sc + "/" + q.marks; $("#f" + id).textContent = fb; $("#tot").textContent = total(); } next(); }
+        if (ans.length < 3) return done(0, "No answer given.\n\nModel answer: " + q.ans, ["Left Q blank: " + q.q.slice(0, 70)]);
+        aiStream({ mode: "mark", question: q.q, marks: q.marks, guide: q.ans, answer: ans }, function (t) { var e = $("#f" + id); if (e) e.textContent = t; })
+          .then(function (text) {
+            var m = text.match(/SCORE:\s*(\d+)/i), sc = m ? Math.min(+m[1], q.marks) : 0;
+            var weak = (text.split(/WEAKNESSES:/i)[1] || "").split(/TO GET FULL MARKS:/i)[0].split("\n").map(function (l) { return l.replace(/^[-•\s]+/, ""); }).filter(Boolean);
+            done(sc, text.replace(/SCORE:.*\n?/i, ""), weak);
+          })
+          .catch(function () { var r = offlineMark(q, ans); done(r.score, "Quick check (AI marker offline).\n" + (r.miss.length ? "Missing: " + r.miss.join(", ") : "All key ideas included.") + "\n\nModel answer: " + q.ans, r.miss); });
+      }
+      next();
+    }
+  };
+  var cleanupTimer = null;
+
+  // ---------- GRADES ----------
+  R.grades = function () {
+    var g = "A";
+    function draw() {
+      main.innerHTML = '<p class="eyebrow">Grade descriptors</p><h1>What each grade looks like</h1><p class="lede">The verb is the giveaway: E/D <b>identify</b>, C/B <b>describe</b>, A <b>explains</b> — with links, examples, terminology and data.</p>' +
+        '<div class="grid g2" style="margin-top:18px"><div class="card"><div class="grade-tabs">' + "ABCDE".split("").map(function (x) { return '<button data-g="' + x + '" aria-pressed="' + (x === g) + '">' + x + "</button>"; }).join("") + '</div><ul class="clean">' + N.grades[g].map(function (l) { return "<li>" + esc(l) + "</li>"; }).join("") + "</ul></div>" +
+        '<div class="card"><h2>Turning a C into an A</h2><ol class="plan"><li><b>Identify</b> the structure or idea (name it).</li><li><b>Describe</b> what it is or does.</li><li><b>Explain</b> why/how using <i>because</i> and <i>therefore</i>.</li><li><b>Link</b> it to the bigger idea, a second concept or the stimulus.</li><li>Quote numbers from the graph or table with units.</li></ol><p class="tip">C: “The vacuole stores water.”<br>A: “The large central vacuole fills with water and pushes against the rigid cell wall, <b>therefore</b> creating turgor pressure that keeps the plant upright <b>because</b> plants have no skeleton.”</p></div></div>' +
+        '<div class="card" style="margin-top:16px"><h2>Syllabus outcomes on this test</h2>' + N.notes.map(function (n) { return "<p>" + tag(n.topic) + " " + esc(n.syl) + "</p>"; }).join("") + '<p class="muted">Separation techniques are part of SC4-SOL-01 but are not being tested.</p></div>';
+      $(".grade-tabs").onclick = function (e) { var b = e.target.closest("[data-g]"); if (b) { g = b.dataset.g; draw(); } };
+    }
+    draw();
+  };
+
+  route();
+})();
+
+</script>
+</body>
+</html>
